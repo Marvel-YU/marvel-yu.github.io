@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Marvel YU">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Marvel YU</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f3f8;--card:#fff;--ink:#14172b;--mute:#5d6280;--red:#e23636;--gold:#f5b800;--line:#d5d8e6;--hd:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--bd:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1020;--card:#1b1f3d;--ink:#f2f3f8;--mute:#a3a8c8;--line:#333966}}
+:root[data-theme="dark"]{--bg:#0e1020;--card:#1b1f3d;--ink:#f2f3f8;--mute:#a3a8c8;--line:#333966}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--bd);-webkit-tap-highlight-color:transparent} .pg{padding-bottom:18px} .top{background:var(--red);color:#fff;padding:22px 18px 20px} .hero{background:var(--red);color:#fff;padding:28px 18px 32px;border-radius:0 0 24px 24px} .sec{letter-spacing:.15px} .tile,.box,.fut,.lk{box-shadow:0 2px 10px rgba(20,23,43,.035)} .tile,.lk,.fut{transition:transform .18s,border-color .18s} .tile:hover,.lk:hover,.fut:hover{border-color:rgba(226,54,54,.45)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--red);z-index:10}
+.tab{display:none;padding-bottom:96px}.tab.on{display:block}
+.pg{max-width:640px;margin:0 auto;padding:16px 14px 0}
+.top{background:var(--red);color:#fff;padding:20px 18px 18px}
+.top h1{font:800 34px/1 var(--hd);margin:0}
+.top p{margin:6px 0 0;font-size:14px;opacity:.92}
+.hero{background:var(--red);color:#fff;padding:26px 18px 30px;border-radius:0 0 28px 28px}
+.logo{font:800 56px/.95 var(--hd);margin:0;letter-spacing:.5px}
+.logo span{display:inline-block;background:#fff;color:var(--red);padding:0 10px;margin-left:8px;border-radius:4px}
+.yu{margin-top:8px;font-size:12px;opacity:.9}
+.hero p{margin:10px 0 0;font-size:15px;opacity:.95;max-width:30ch}
+.next{margin:-18px 14px 0;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:center;max-width:612px}
+.next .num{font:800 54px/1 var(--hd);color:var(--red);min-width:78px;text-align:center}
+.next .num small{display:block;font:600 13px/1.2 var(--bd);color:var(--mute)}
+.next h3{margin:0;font:800 22px/1.1 var(--hd)}
+.next p{margin:3px 0 0;color:var(--mute);font-size:13.5px}
+.sec{font:800 22px/1.1 var(--hd);margin:22px 0 10px}
+.tiles{display:grid;gap:10px}
+.tile{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer}
+.tile:focus-visible,.chips button:focus-visible,.it button:focus-visible,.lk:focus-visible{outline:3px solid var(--red)}
+.tile .ic{font-size:30px;width:50px;height:50px;border-radius:12px;background:var(--red);display:grid;place-items:center;flex:none}
+.tile b{display:block;font:800 22px/1.1 var(--hd)}
+.tile span{color:var(--mute);font-size:13.5px}
+.tile i{margin-left:auto;font-style:normal;color:var(--mute);font-size:22px}
+.box{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.box h3{margin:0 0 4px;font:800 20px/1.1 var(--hd)}
+.box p{margin:0;color:var(--mute);font-size:14.5px}
+.bar{height:8px;background:rgba(255,255,255,.3);border-radius:4px;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.cnt{font-size:13px;margin-top:6px}
+.chips{display:flex;gap:8px;margin:0 0 14px}
+.chips button{all:unset;box-sizing:border-box;padding:7px 14px;border:1px solid var(--line);border-radius:20px;font-size:14px;background:var(--card);cursor:pointer}
+.chips button.on{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}
+.tl{position:relative;margin:0;padding:0 0 0 36px;list-style:none}
+.tl::before{content:"";position:absolute;left:12px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.it{position:relative;margin-bottom:9px;display:flex;align-items:center;gap:0}
+.it.hide{display:none}
+.n{position:absolute;left:-36px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--bg);border:2px solid var(--red);font:800 13px/22px var(--hd);text-align:center;color:var(--red)}
+.it.done .n{background:var(--gold);border-color:var(--gold);color:#14172b}
+.entry{display:flex;align-items:center;gap:8px;flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:7px 8px 7px 12px;box-shadow:0 2px 8px rgba(20,23,43,.025);transition:border-color .18s,box-shadow .18s}.entry:focus-within,.entry:hover{border-color:#9bbcff;box-shadow:0 4px 14px rgba(37,99,235,.08)}.it button{all:unset;box-sizing:border-box;display:flex;gap:10px;align-items:center;flex:1;min-width:0;cursor:pointer;padding:5px 0}.it button:active{transform:scale(.995)}
+.t{flex:1;font-weight:700;font-size:15.5px;line-height:1.25}
+.k{display:block;font-weight:400;color:var(--mute);font-size:12.5px;margin-top:2px}
+.nt{display:block;font-weight:400;color:var(--red);font-size:12px;margin-top:3px}
+.yr{text-align:center;font:800 18px/1 var(--hd);color:var(--red);min-width:44px}
+.yr small{display:block;font:14px/1.4 var(--bd)}
+.ck{width:26px;height:26px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;font-size:15px;color:transparent;flex:none}
+.done .ck{background:var(--gold);border-color:var(--gold);color:#14172b}
+.done .t{opacity:.65}
+.fut{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.dt{flex:none;width:68px;text-align:center;background:var(--red);color:#fff;border-radius:10px;padding:8px 0;font:800 30px/1 var(--hd)}
+.dt small{display:block;font:700 13px/1.3 var(--hd);letter-spacing:.3px}
+.fut h3{margin:0;font:800 21px/1.1 var(--hd)}
+.fut p{margin:3px 0 0;color:var(--mute);font-size:13.5px}
+.fut em{font-style:normal;color:var(--red);font-weight:700;font-size:13.5px}
+ul.nts{margin:0;padding-left:18px;color:var(--mute);font-size:14px}
+ul.nts li{margin-bottom:6px}
+.lk{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;color:inherit;text-decoration:none}
+.lk .lg{width:52px;height:52px;border-radius:50%;flex:none;object-fit:cover}
+.lk svg{width:52px;height:52px;flex:none}
+.lk b{display:block;font:800 20px/1.1 var(--hd)}
+.lk span{color:var(--mute);font-size:13.5px}
+.lk i{margin-left:auto;font-style:normal;color:var(--mute);font-size:22px}
+.lk:not([href]) i{display:none}
+.w{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex:none;margin:0;padding:9px 11px;background:#2563eb;color:#fff;border-radius:9px;font-weight:700;font-size:12.5px;line-height:1.2;text-decoration:none;white-space:nowrap;box-shadow:0 2px 5px rgba(37,99,235,.18);transition:background .18s,transform .18s}.w:hover{background:#1d4ed8}.w:active{transform:scale(.97)}
+.w:focus-visible{outline:3px solid var(--ink)}
+.na{display:inline-flex;align-items:center;justify-content:center;flex:none;margin:0;padding:7px 9px;border:1px solid var(--line);border-radius:9px;font-size:11px;line-height:1.2;color:var(--mute);white-space:nowrap;background:var(--bg)}
+.reset{all:unset;display:block;margin:18px auto 0;color:var(--mute);font-size:13px;text-decoration:underline;cursor:pointer}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav button{all:unset;flex:1;text-align:center;padding:9px 0 8px;font-size:11.5px;color:var(--mute);cursor:pointer}
+nav button b{display:block;font-size:21px;line-height:1.25}
+nav button.on{color:var(--red);font-weight:700}
+nav button:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
+@media(max-width:390px){.tl{padding-left:31px}.n{left:-31px;width:24px;height:24px;line-height:20px}.it{gap:5px}.entry{gap:6px;padding:6px}.it button{gap:7px;padding:5px 0}.ck{width:22px;height:22px}.yr{min-width:38px;font-size:16px}.w{padding:8px 7px;font-size:11px}.entry .yr{min-width:35px}.na{padding:6px 6px;font-size:10px}.t{font-size:14px}.k{font-size:11.5px}}
+
+/* MARVEL YU — zamonaviy quyuq-yashil glassmorphism dizayni */
+:root{--bg:#061711;--card:rgba(16,48,36,.72);--ink:#effaf3;--mute:#a8c4b3;--red:#20b477;--gold:#a7f3d0;--line:rgba(164,226,190,.16);--hd:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--bd:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;color-scheme:dark}
+:root[data-theme="dark"]{--bg:#061711;--card:rgba(16,48,36,.72);--ink:#effaf3;--mute:#a8c4b3;--line:rgba(164,226,190,.16)}
+html{background:#061711;scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 15% 0%,rgba(17,125,82,.28),transparent 42%),radial-gradient(ellipse at 100% 38%,rgba(11,79,57,.25),transparent 40%),#061711;color:var(--ink);min-height:100vh}
+body::before{background:#0a3324}
+.pg{max-width:760px;padding:18px 15px 26px}
+.hero,.top{background:linear-gradient(135deg,rgba(12,72,48,.96),rgba(5,34,24,.94) 70%);color:#f0fff6;border:1px solid rgba(174,255,208,.12);box-shadow:0 18px 50px rgba(0,0,0,.22)}
+.hero{padding:34px 20px 42px;border-radius:0 0 30px 30px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;width:210px;height:210px;right:-65px;top:-70px;border-radius:50%;background:rgba(49,211,139,.11);filter:blur(3px);pointer-events:none}
+.logo{font-size:clamp(48px,12vw,66px);letter-spacing:1px;text-shadow:0 5px 24px rgba(0,0,0,.25)}
+.logo span{background:#b9f8d7;color:#073b28;border-radius:9px;padding:2px 10px;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.yu{letter-spacing:.12em;text-transform:uppercase;color:#bcebd0;font-size:10px}
+.hero p{color:#d2ebdc}
+.top{padding:22px 18px 20px;border-radius:0 0 24px 24px}
+.top h1{font-size:clamp(28px,7vw,38px)}
+.next,.tile,.box,.fut,.lk,.entry,.chips button{background:rgba(14,43,32,.7);border:1px solid rgba(165,235,193,.16);box-shadow:0 12px 30px rgba(0,0,0,.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.next{margin-top:-20px;border-radius:20px;padding:17px}
+.next .num,.yr{color:#6ee7ad}
+.sec{font-size:24px;color:#d9f9e6;margin-top:28px;letter-spacing:.02em}
+.tile{border-radius:18px;padding:16px;transition:transform .2s,border-color .2s,background .2s}
+.tile:hover,.lk:hover,.fut:hover{transform:translateY(-2px);border-color:rgba(91,231,157,.5);background:rgba(17,62,44,.82)}
+.tile .ic{background:linear-gradient(145deg,#168b5a,#0b5037);border:1px solid rgba(191,255,218,.14);border-radius:15px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.tile b,.lk b,.fut h3,.box h3{color:#effff5}
+.tile span,.lk span,.fut p,.box p{color:#abc8b6}
+.tile i,.lk i{color:#75dba5}
+.box{border-left:3px solid #2bc783;border-radius:16px;padding:16px}
+.bar{background:rgba(206,255,225,.12);height:7px}.bar i{background:linear-gradient(90deg,#1ba96d,#91f5bd)}
+.cnt{color:#c4e9d2}
+.chips button{color:#c3dece;border-radius:13px;padding:9px 13px}
+.chips button.on{background:linear-gradient(135deg,#168b5a,#0b6543);border-color:#36cf89;color:#fff;box-shadow:0 5px 18px rgba(20,174,105,.18)}
+.tl::before{background:linear-gradient(180deg,#2ac782,rgba(42,199,130,.08))}
+.n{background:#0b2a1e;border-color:#36c985;color:#8cf0b8}
+.it.done .n,.done .ck{background:#a7f3d0;border-color:#a7f3d0;color:#073b28}
+.entry{border-radius:15px;gap:8px;padding:8px 9px 8px 12px}
+.entry:focus-within,.entry:hover{border-color:rgba(83,228,151,.55);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.ck{border-color:rgba(176,225,193,.28);border-radius:8px}
+.nt{color:#7ce7ae}
+.w{background:linear-gradient(135deg,#1bb879,#08784d);color:#fff;border:1px solid rgba(184,255,216,.2);border-radius:10px;box-shadow:0 5px 14px rgba(0,0,0,.18);padding:10px 12px}
+.w:hover{background:linear-gradient(135deg,#2ed28e,#0b8a59)}
+.na{background:rgba(6,23,17,.45);border-color:rgba(165,235,193,.16);color:#a8c4b3}
+.dt{background:linear-gradient(145deg,#168b5a,#0b5037);border:1px solid rgba(191,255,218,.15);border-radius:13px}
+.lk{border-radius:18px}
+.lk .lg,.lk svg{border-radius:14px}
+.reset{color:#a8c4b3}
+nav{background:rgba(5,25,18,.86);border-top:1px solid rgba(165,235,193,.15);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 -8px 30px rgba(0,0,0,.18)}
+nav button{color:#89a998;padding-top:10px;padding-bottom:9px}
+nav button b{font-size:20px}
+nav button.on{color:#76e5a9}
+.tile:focus-visible,.chips button:focus-visible,.it button:focus-visible,.lk:focus-visible,nav button:focus-visible{outline:2px solid #72e6a5;outline-offset:2px}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tiles .tile:first-child{grid-column:1/-1}.hero{padding-left:max(22px,calc((100vw - 720px)/2));padding-right:22px}.top{padding-left:max(20px,calc((100vw - 720px)/2));padding-right:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Media-ilova uslubidagi bosh sahifa: to‘q fon, katta posterlar va shisha navigatsiya */
+.featured-wrap{padding:0 0 4px;overflow:hidden}
+.featured-row{display:flex;gap:14px;overflow-x:auto;padding:8px max(18px,calc((100vw - 680px)/2)) 10px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.featured-row::-webkit-scrollbar{display:none}
+.poster{all:unset;position:relative;isolation:isolate;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;flex:0 0 min(72vw,330px);height:clamp(390px,112vw,570px);max-height:66vh;min-height:370px;padding:18px;border-radius:30px;overflow:hidden;scroll-snap-align:center;color:#fff;cursor:pointer;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.poster::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 35%,rgba(83,255,173,.38),transparent 38%),linear-gradient(160deg,#174d3a,#071b15 65%,#020907)}
+.poster::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.1),transparent 30%,rgba(0,0,0,.18) 52%,rgba(0,0,0,.86))}
+.poster-two::before{background:radial-gradient(ellipse at 70% 28%,rgba(29,190,124,.45),transparent 36%),linear-gradient(145deg,#0e4939,#06231c 58%,#030b08)}
+.poster-three::before{background:radial-gradient(ellipse at 42% 30%,rgba(153,255,198,.3),transparent 38%),linear-gradient(145deg,#244c3b,#10271e 60%,#030b08)}
+.poster-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.12em}.poster-top i{font-style:normal;font-weight:900;font-size:16px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);border-radius:50%;padding:9px}.poster-top em{font-style:normal;background:rgba(0,0,0,.26);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:7px 11px;backdrop-filter:blur(12px)}
+.poster-art{position:absolute;left:0;right:0;top:18%;height:50%;display:grid;place-items:center;font-size:clamp(130px,34vw,220px);font-weight:200;color:rgba(194,255,219,.18);text-shadow:0 0 55px rgba(43,255,159,.28)}
+.poster strong{font:800 clamp(36px,10vw,56px)/.92 var(--hd);letter-spacing:.015em;text-shadow:0 3px 24px #000}.poster small{font-size:13px;color:#c1e5d1;margin-top:8px}
+.slider-dots{display:flex;justify-content:center;gap:9px;padding:10px 0 20px}.slider-dots span{width:7px;height:7px;border-radius:50%;background:#40554a}.slider-dots span.active{width:20px;border-radius:9px;background:#6de7a8}
+.quick-links{display:flex;gap:10px;overflow-x:auto;padding:0 18px 16px;scrollbar-width:none}.quick-links button{all:unset;flex:none;display:flex;align-items:center;gap:14px;padding:12px 19px;border-radius:30px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.07);color:#effff5;font-size:14px;white-space:nowrap;backdrop-filter:blur(18px);cursor:pointer}.quick-links button:first-child{background:rgba(255,255,255,.16)}.quick-links b{font-size:23px;font-weight:400}
+.nav-home svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+nav{background:rgba(4,17,12,.82)!important;border-top:1px solid rgba(186,255,213,.12)!important;backdrop-filter:blur(26px)!important;-webkit-backdrop-filter:blur(26px)!important;box-shadow:0 -12px 35px rgba(0,0,0,.32)!important}
+nav button{color:#90a99b!important}nav button.on{color:#83efb1!important}nav button b{min-height:26px;display:flex;align-items:center;justify-content:center;margin-bottom:3px}nav button.on .nav-home svg{filter:drop-shadow(0 0 7px rgba(91,255,170,.45))}
+.hero{border-radius:0 0 24px 24px!important;padding-top:26px!important;padding-bottom:22px!important}.logo{font-size:clamp(42px,10vw,58px)!important}
+@media(min-width:700px){.poster{flex-basis:300px;height:470px}.featured-row{justify-content:center}.quick-links{justify-content:center}}
+
+
+/* Fikr bildirish: har bir film ostidagi uzun, ingichka ko'k tugma */
+.comment-trigger{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:32px;margin:5px 0 0;padding:6px 12px;border:1px solid rgba(72,153,255,.35);border-radius:9px;background:linear-gradient(90deg,rgba(27,93,161,.26),rgba(26,118,190,.12));color:#91caff;font:600 12px/1.2 var(--bd);letter-spacing:.02em;cursor:pointer;transition:background .2s,border-color .2s}
+.comment-trigger:active{background:rgba(38,132,220,.3)}
+.comment-trigger .bubble{font-size:14px}
+.it{display:block}
+.it .entry{width:100%}
+.comment-page{padding-bottom:110px;min-height:70vh}
+.comment-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.back-comments{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);border-radius:12px;width:42px;height:42px;font-size:23px;cursor:pointer}
+.comment-card{background:rgba(15,49,36,.72);border:1px solid rgba(151,231,183,.18);border-radius:20px;padding:18px;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+.comment-card h2{margin:0 0 4px;font:800 27px/1.1 var(--hd)}
+.comment-subtitle{color:var(--mute);font-size:13px;margin-bottom:18px}
+.comment-card textarea{display:block;width:100%;min-height:145px;resize:vertical;border-radius:14px;border:1px solid rgba(115,201,153,.25);background:rgba(0,0,0,.22);color:var(--ink);padding:14px;font:15px/1.5 var(--bd);outline:none}
+.comment-card textarea:focus{border-color:#398fe8;box-shadow:0 0 0 3px rgba(45,137,233,.12)}
+.comment-actions{display:flex;gap:9px;margin-top:12px}
+.comment-save,.comment-clear{border:1px solid rgba(72,153,255,.32);border-radius:12px;padding:11px 14px;cursor:pointer;font-weight:700}
+.comment-save{flex:1;background:#176bc0;color:#fff}
+.comment-clear{background:rgba(255,255,255,.06);color:var(--mute)}
+.comment-feedback{margin-top:10px;font-size:13px;color:#8be6b2;min-height:19px}
+.saved-comments{margin-top:20px}
+.saved-comments h3{font:800 20px/1.1 var(--hd);margin:0 0 10px}
+.saved-comment{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:12px;padding:12px;margin-bottom:8px;white-space:pre-wrap;overflow-wrap:anywhere}
+.saved-comment small{display:block;color:var(--mute);margin-bottom:5px}
+nav button b svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:390px){.comment-trigger{min-height:30px;font-size:11.5px}.comment-card{padding:14px}}
+
+
+/* Fikr sahifasi va uycha ko'rinishidagi navigatsiya stikerlari */
+.comment-top{background:linear-gradient(135deg,rgba(10,65,45,.98),rgba(5,28,22,.98));}
+.comment-top .comment-head{margin:0;align-items:center}
+.comment-top .comment-head h1{margin:0;font:800 32px/1 var(--hd)}
+.comment-top .comment-head p{margin:5px 0 0;color:#bcebd0;font-size:14px}
+.comment-top>p{margin:14px 0 0;color:#d2ebdc}
+.comment-trigger{min-height:35px;margin-top:6px;border-radius:8px;border:1px solid rgba(67,151,255,.45);background:linear-gradient(90deg,rgba(25,105,190,.28),rgba(25,105,190,.10));color:#9acbff;font-size:12px;letter-spacing:.025em}
+.comment-trigger:hover{background:rgba(37,118,220,.24);border-color:rgba(92,174,255,.7)}
+.comment-card{border-color:rgba(72,153,255,.24);background:rgba(10,37,31,.88)}
+.comment-card h2{color:#eaf7ff}
+.comment-save{background:linear-gradient(135deg,#2589ed,#1459b5);border-color:rgba(116,185,255,.4)}
+.comment-save:hover{background:linear-gradient(135deg,#3c9aff,#1a68ce)}
+.quick-links button{position:relative}
+.quick-links button:first-child::before{content:'⌂';display:grid;place-items:center;width:27px;height:27px;border:1px solid rgba(178,255,211,.3);border-radius:9px;background:linear-gradient(145deg,rgba(40,190,119,.28),rgba(7,74,48,.55));font-size:21px;line-height:1;color:#a7f3d0}
+@media(max-width:390px){.comment-top .comment-head h1{font-size:28px}.comment-trigger{min-height:34px}}
+
+</style>
+</head>
+<body>
+<section class="tab on" id="t0">
+  <div class="hero">
+    <h1 class="logo">MARVEL<span>YU</span></h1>
+    <div class="yu">Your Universe: Marvel sizning koinotingiz</div>
+    <p>Marvel olami oʻzbek tilida: koʻrish tartibi, premyeralar va yangiliklar</p>
+  </div>
+  <div class="featured-wrap">
+    <div class="featured-row" aria-label="Marvel olami tavsiya etilgan bo‘limlar">
+      <button class="poster poster-one" data-go="1"><span class="poster-top"><i>MY</i><em>FILM</em></span><span class="poster-art">✦</span><strong>MARVEL<br>OLAMI</strong><small>Xronologik tartib</small></button>
+      <button class="poster poster-two" data-go="3"><span class="poster-top"><i>MY</i><em>NEWS</em></span><span class="poster-art">✧</span><strong>SO‘NGGI<br>YANGILIKLAR</strong><small>Marvel olamidan</small></button>
+      <button class="poster poster-three" data-go="2"><span class="poster-top"><i>MY</i><em>2026+</em></span><span class="poster-art">◈</span><strong>YANGI<br>PREMYERALAR</strong><small>Kutilayotgan filmlar</small></button>
+    </div>
+    <div class="slider-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+    <div class="quick-links"><button data-go="0">Hammasi birgalikda <b>›</b></button><button data-go="1">Filmlar</button><button data-go="1">Seriallar</button></div>
+  </div>
+  <div class="next" id="next"></div>
+  <div class="pg">
+    <div class="sec">Boʻlimlar</div>
+    <div class="tiles">
+      <button class="tile" data-go="1"><div class="ic">🎬</div><div><b>Xronologik tartib</b><span id="hp">48 ta film va serial</span></div><i>›</i></button>
+      <button class="tile" data-go="2"><div class="ic">🗓</div><div><b>Kelajak premyeralar</b><span>Yangi kinolar va sanalar</span></div><i>›</i></button>
+      <button class="tile" data-go="3"><div class="ic">📰</div><div><b>Yangiliklar</b><span>Marvel olamidan xabarlar</span></div><i>›</i></button>
+    </div>
+    <div class="sec">Qayerda koʻrish</div>
+    <a class="lk" id="chl" rel="noopener"><img class="lg" alt="VIBE CINEMA UZ" src="data:image/jpeg;base64,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"><div><b>Marvel pleylisti</b><span>VIBE CINEMA UZ kanali, VK Video</span></div><i>›</i></a>
+    <a class="lk" href="https://apps.apple.com/app/id6447614666" target="_blank" rel="noopener"><svg viewBox="0 0 52 52" aria-hidden="true"><rect x="0" y="6" width="40" height="40" rx="11" fill="#2d8cff"/><rect x="8" y="2" width="42" height="42" rx="12" fill="#ff2b45"/><path d="M23 14l14 9-14 9z" fill="#fff"/></svg><div><b>VK Video</b><span>Avval ilovani App Storeʼdan oʻrnating</span></div><i>›</i></a>
+    <a class="lk"><div style="font-size:34px;width:52px;text-align:center;flex:none">🤖</div><div><b>Android va Samsung</b><span>Google Playʼdan olib tashlangan. Galaxy Storeʼda “VK Видео” ni qidiring</span></div></a>
+    <div class="box"><h3>🎬 Filmlar</h3><p>Avval kinoteatrlarda chiqadi. Keyin onlayn platformalarga tushadi.</p></div>
+    <div class="box"><h3>📺 Seriallar</h3><p>Disney+ va boshqa platformalarda. Disney+ sizning mintaqangizda ishlashini obuna oldidan tekshiring.</p></div>
+  </div>
+</section>
+<section class="tab" id="t1">
+  <div class="top"><h1>Xronologik tartib</h1><p>Voqealar tartibida, 1–48</p><div class="bar"><i id="bar"></i></div><div class="cnt" id="cnt"></div></div>
+  <div class="pg">
+    <div class="chips" id="chips">
+      <button class="on" data-f="all">Hammasi</button>
+      <button data-f="f">🎬 Filmlar</button>
+      <button data-f="s">📺 Seriallar</button>
+    </div>
+    <ol class="tl" id="l1"></ol>
+    <div class="box"><h3>📌 Muhim maʼlumot</h3><p>Kanaldagi havolasi hozircha mavjud boʻlmagan seriallarni oʻtkazib yuborsangiz ham, Marvel filmlarining xronologik tartibi buzilmaydi. Hikoyani toʻliqroq tushunish uchun asosan uchta serialni koʻrish tavsiya etiladi: <b>WandaVision</b>, <b>Lochin va Qishki askar</b> hamda <b>Loki</b>. Hozircha platformada faqat <b>Loki</b> seriali mavjud. Qolgan ikki serial tez orada joylanadi. Yangilanishlarni kuzatib boring!</p></div>
+    <button class="reset" id="rs">Belgilarni tozalash</button>
+  </div>
+</section>
+<section class="tab" id="t2">
+  <div class="top"><h1>Kelajak premyeralar</h1><p>Chiqish sanalari tasdiqlangan kinolar</p></div>
+  <div class="pg" id="fut"></div>
+</section>
+<section class="tab" id="t3">
+  <div class="top"><h1>Yangiliklar</h1><p>Marvel olamidan xabarlar</p></div>
+  <div class="pg" id="news"></div>
+</section>
+<nav>
+  <button class="on" data-go="0"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.8l8.5 6.7M5.5 9.5v10h13v-10M9.5 19.5v-6h5v6"/></svg></b>Bosh sahifa</button>
+  <button data-go="1"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v13H4zM8 9h8M8 12h8M8 15h5"/></svg></b>Tartib</button>
+  <button data-go="2"><b><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M4 10h16M8 13.5h3"/></svg></b>Premyera</button>
+  <button data-go="3"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h16v15H4zM7.5 8h9M7.5 11.5h9M7.5 15h6"/></svg></b>Yangilik</button>
+</nav>
+<section class="tab" id="t4" aria-label="Kino fikrlari">
+  <div class="top comment-top">
+    <div class="comment-head">
+      <button class="back-comments" id="commentBack" type="button" aria-label="Kinolar roʻyxatiga qaytish">‹</button>
+      <div><h1>Fikrlar</h1><p id="commentMovieTitle">Kino</p></div>
+    </div>
+    <p>Ushbu kino haqida fikringizni yozing</p>
+  </div>
+  <div class="pg comment-page">
+    <div class="comment-card">
+      <h2>Fikr qoldirish</h2>
+      <div class="comment-subtitle">Fikrlaringiz shu qurilmada saqlanadi.</div>
+      <textarea id="commentText" maxlength="2000" placeholder="Bu kino sizga yoqdimi? Fikringizni yozing..."></textarea>
+      <div class="comment-actions"><button class="comment-save" id="commentSave" type="button">Fikrni saqlash</button><button class="comment-clear" id="commentClear" type="button">Tozalash</button></div>
+      <div class="comment-feedback" id="commentFeedback" aria-live="polite"></div>
+      <div class="saved-comments"><h3>Yozilgan fikrlar</h3><div id="savedComments"></div></div>
+    </div>
+  </div>
+</section>
+<script>
+var L=[
+["Captain America: The First Avenger","Kapitan Amerika: Birinchi qasoskor","1943–1945","f"],
+["Captain Marvel","Kapitan Marvel","1995","f"],
+["Iron Man","Temir odam","2008","f"],
+["Iron Man 2","Temir odam 2","2010","f"],
+["The Incredible Hulk","Ajoyib Xalk","2010","f"],
+["Thor","Tor","2011","f"],
+["The Avengers","Qasoskorlar","2012","f"],
+["Iron Man 3","Temir odam 3","2012","f"],
+["Thor: The Dark World","Tor: Qorongʻu dunyo","2013","f"],
+["Captain America: The Winter Soldier","Kapitan Amerika: Qishki askar","2014","f"],
+["Guardians of the Galaxy","Galaktika Qoʻriqchilari","2014","f"],
+["Guardians of the Galaxy Vol. 2","Galaktika Qoʻriqchilari 2-qismi","2014","f"],
+["Avengers: Age of Ultron","Qasoskorlar: Ultron davri","2015","f"],
+["Ant-Man","Qarishqachaqoʻngʻiz","2015","f"],
+["Captain America: Civil War","Kapitan Amerika: Fuqarolar urushi","2016","f"],
+["Black Widow","Qora beva","2016","f"],
+["Black Panther","Qora pantera","2017","f"],
+["Spider-Man: Homecoming","Oʻrgimchak-odam: Uyga qaytish","2017","f"],
+["Doctor Strange","Doktor Strenj","2017","f"],
+["Thor: Ragnarok","Tor: Ragnarok","2017","f"],
+["Ant-Man and the Wasp","Qarishqachaqoʻngʻiz va Osa","2018","f"],
+["Avengers: Infinity War","Qasoskorlar: Cheksizlik urushi","2018","f"],
+["Avengers: Endgame","Qasoskorlar: Yakun","2019","f"],
+["Loki (Season 1) + Loki (Season 2)","Loki (1-mavsum) + Loki (2-mavsum)","2021–2023","s","Ikkalasi birgalikda koʻriladi. Multikoinot voqealarining boshlanishi"],
+["WandaVision","VandaVizion","2021","s"],
+["The Falcon and the Winter Soldier","Lochin va Qishki askar","2021","s"],
+["Shang-Chi and the Legend of the Ten Rings","Shang-Chi va oʻn uzuk afsonasi","2021","f"],
+["Spider-Man: No Way Home","Oʻrgimchak-odam: Yoʻl yoʻq","2021","f"],
+["Hawkeye","Xoukey","2021","s"],
+["Moon Knight","Oy ritsari","2022","s"],
+["Doctor Strange in the Multiverse of Madness","Doktor Strenj: Moʻjizalar olamida","2022","f"],
+["Ms. Marvel","Ms. Marvel","2022","s"],
+["Thor: Love and Thunder","Tor: Sevgi va chaqmoq","2022","f"],
+["Black Panther: Wakanda Forever","Qora pantera: Vakanda abadiy","2022","f"],
+["Guardians of the Galaxy Vol. 3","Galaktika Qoʻriqchilarining 3-qismi","2023","f"],
+["The Marvels","Kapitan Marvel: Moʻjizalar","2023","f"],
+["Ant-Man and the Wasp: Quantumania","Qarishqachaqoʻngʻiz va Osa: Kvantumaniya","2023","f"],
+["Secret Invasion","Maxfiy bosqin","2023","s"],
+["Loki (Season 2)","Loki (2-mavsum) (yakun)","2023","s","Agar 24-ga qoʻshilmagan boʻlsa, bu yerda yakunlanadi"],
+["What If…? (Season 1)","Agar nima boʻlsa…? (1-mavsum)","2023","s"],
+["Echo","Echo (Aks-sado)","2024","s"],
+["Deadpool & Wolverine","Dedpul va Vulverin","2024","f"],
+["Agatha All Along","Agata hammasida aybdor","2024","s"],
+["Daredevil: Born Again (Season 1)","Daredevil: Born Again, Mardonavor: Qaytadan tugʻilish (1-mavsum)","2025","s"],
+["Captain America: Brave New World","Kapitan Amerika: Jasur yangi dunyo","2025","f"],
+["Thunderbolts*","Makkorlar / Yashinlar guruhi","2025","f"],
+["The Fantastic Four: First Steps","Fantastik toʻrtlik: Birinchi qadamlar","2025","f"],
+["Spider-Man: Brand New Day","Oʻrgimchak-odam: Yangi kun","2026","f"]];
+var MO=["yan","fev","mar","apr","may","iyun","iyul","avg","sen","okt","noy","dek"];
+var F=[["Avengers: Doomsday","Qasoskorlar: Qiyomat kuni",2026,11,18],["Avengers: Secret Wars","Qasoskorlar: Maxfiy urushlar",2027,11,17]];
+var NEWS=[];
+var LINK={};[[1,"456239758"],[2,"456240198"],[3,"456241101"],[4,"456241102"],[5,"456239234"],[6,"456239744"],[7,"456239742"],[8,"456240765"],[9,"456239745"],[10,"456239194"],[11,"456239753"],[12,"456239774"],[13,"456239743"],[14,"456240207"],[15,"456239195"],[16,"456240209"],[17,"456240200"],[18,"456239169"],[19,"456239436"],[20,"456239444"],[21,"456239502"],[22,"456239765"],[23,"456240224"]].forEach(function(x){LINK[x[0]]="https://vkvideo.ru/video-229908696_"+x[1]+"?pl=-229908696_50"});
+LINK[27]="https://vkvideo.ru/video-229908696_456240208?pl=-229908696_50";
+LINK[28]="https://vkvideo.ru/video-229908696_456241245?pl=-229908696_50&t=3s";
+LINK[31]="https://vkvideo.ru/video-229908696_456240193?pl=-229908696_50";
+// 32 uchun havola berilmagan; foydalanuvchi bergan 32-havola 36-o'ringa ko'chirildi.
+LINK[33]="https://vkvideo.ru/video-229908696_456239746?pl=-229908696_50";
+LINK[34]="https://vkvideo.ru/video-229908696_456240201?pl=-229908696_50";
+LINK[35]="https://vkvideo.ru/video-229908696_456239441?pl=-229908696_50";
+LINK[36]="https://vkvideo.ru/video-229908696_456240199?pl=-229908696_50";
+LINK[37]="https://vkvideo.ru/video-229908696_456240203?pl=-229908696_50";
+LINK[42]="https://vkvideo.ru/video-229908696_456240204?pl=-229908696_50";
+LINK[45]="https://vkvideo.ru/video-229908696_456240205?pl=-229908696_50";
+LINK[46]="https://vkvideo.ru/video-229908696_456239772?pl=-229908696_50";
+LINK[47]="https://vkvideo.ru/video-229908696_456240001?pl=-229908696_50";
+LINK[48]="https://vkvideo.ru/video-229908696_456241247?t=12s";
+LINK[24]="https://vkvideo.ru/video/playlist/-229908696_85";var NA=[];
+var seen={};
+try{seen=JSON.parse(localStorage.getItem("myu2")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("myu2",JSON.stringify(seen))}catch(e){}}
+function days(x){var n=new Date();n=new Date(n.getFullYear(),n.getMonth(),n.getDate());return Math.round((new Date(x[2],x[3],x[4])-n)/864e5)}
+var ol=document.getElementById("l1");
+function build(){
+  ol.innerHTML="";
+  L.forEach(function(x,i){
+    var id=i+1;
+    if(id===39)return; // Loki 2-mavsum 24-oʻrinda allaqachon bor
+    var li=document.createElement("li");
+    li.className="it"+(seen[id]?" done":"");
+    li.dataset.k=x[3];
+    li.innerHTML='<span class="n"></span><div class="entry"><button><span class="ck">✓</span><span class="t"></span><span class="yr"></span></button></div>';
+    li.children[0].textContent=id;
+    var entry=li.children[1],b=entry.children[0],t=b.children[1];
+    t.textContent=x[1];
+    var k=document.createElement("span");k.className="k";k.textContent=x[0];t.appendChild(k);
+    if(x[4]){var n=document.createElement("span");n.className="nt";n.textContent=x[4];t.appendChild(n)}
+    b.children[2].innerHTML=x[2]+"<small>"+(x[3]=="f"?"🎬":"📺")+"</small>";
+    b.setAttribute("aria-pressed",seen[id]?"true":"false");
+    b.onclick=function(){if(seen[id]){delete seen[id]}else{seen[id]=1}save();li.classList.toggle("done");b.setAttribute("aria-pressed",seen[id]?"true":"false");stat()};
+    if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.textContent="▶ Koʻrish";entry.appendChild(a)}else if(NA.indexOf(id)>-1){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";entry.appendChild(m)}
+    var commentBtn=document.createElement("button");
+    commentBtn.type="button";
+    commentBtn.className="comment-trigger";
+    commentBtn.innerHTML='<span class="bubble">▢</span><span>Fikr bildirish</span><span aria-hidden="true">↗</span>';
+    commentBtn.setAttribute("aria-label",x[1]+" uchun fikr bildirish");
+    commentBtn.onclick=function(){openComments(id);};
+    li.appendChild(commentBtn);
+    ol.appendChild(li);
+  });
+}
+function stat(){
+  var d=Object.keys(seen).length,s="Koʻrildi: "+d+" / "+L.length;
+  document.getElementById("bar").style.width=(d/L.length*100)+"%";
+  document.getElementById("cnt").textContent=s;
+  document.getElementById("hp").textContent=s;
+}
+NA=L.map(function(x,i){return i+1}).filter(function(id){return id!==39&&!LINK[id]});
+build();stat();
+function dtxt(n){return n>0?n+" kun qoldi":(n==0?"Bugun chiqadi":"Chiqdi")}
+var up=F.filter(function(x){return days(x)>=0});
+var nx=document.getElementById("next");
+if(up.length){var u=up[0],n=days(u);nx.innerHTML='<div class="num"></div><div><h3></h3><p></p></div>';nx.children[0].innerHTML=n+"<small>kun qoldi</small>";nx.children[1].children[0].textContent=u[1];nx.children[1].children[1].textContent="Keyingi premyera: "+u[4]+"-"+MO[u[3]]+" "+u[2]}
+else{nx.style.display="none"}
+var fu=document.getElementById("fut");
+F.forEach(function(x){
+  var d=document.createElement("div");d.className="fut";
+  d.innerHTML='<div class="dt"></div><div><h3></h3><p></p><em></em></div>';
+  d.children[0].innerHTML=x[4]+"<small>"+MO[x[3]].toUpperCase()+" "+x[2]+"</small>";
+  d.children[1].children[0].textContent=x[1];
+  d.children[1].children[1].textContent=x[0];
+  d.children[1].children[2].textContent=dtxt(days(x));
+  fu.appendChild(d);
+});
+document.querySelectorAll("#chips button").forEach(function(c){c.onclick=function(){
+  document.querySelectorAll("#chips button").forEach(function(x){x.classList.remove("on")});
+  c.classList.add("on");
+  var f=c.dataset.f;
+  document.querySelectorAll("#l1 .it").forEach(function(li){li.classList.toggle("hide",f!="all"&&li.dataset.k!=f)});
+}});
+document.getElementById("rs").onclick=function(){if(confirm("Barcha belgilar oʻchirilsinmi?")){seen={};save();build();stat();document.querySelector("#chips .on").click()}};
+var nw=document.getElementById("news");
+if(NEWS.length){NEWS.forEach(function(n){var d=document.createElement("div");d.className="box";d.innerHTML="<h3></h3><p></p>";d.children[0].textContent=n[0];d.children[1].textContent=n[1];nw.appendChild(d)})}
+else{nw.innerHTML='<div class="box"><h3>Hozircha yangilik yoʻq</h3><p>Yangi yangiliklar shu yerda paydo boʻladi.</p></div>'}
+var CH_URL="https://vkvideo.ru/video/playlist/-229908696_50";
+(function(){var c=document.getElementById("chl");if(CH_URL){c.href=CH_URL;c.target="_blank"}else{c.querySelector("span").textContent="VK Video ilovasida kanal nomini qidiring"}})();
+
+var activeCommentId=null, commentStore={};
+try{commentStore=JSON.parse(localStorage.getItem("myu2_comments")||"{}")}catch(e){}
+function persistComments(){try{localStorage.setItem("myu2_comments",JSON.stringify(commentStore))}catch(e){}}
+function openComments(id){
+  activeCommentId=id;
+  var movie=L[id-1];
+  document.getElementById("commentMovieTitle").textContent=movie?movie[1]:"Kino";
+  document.getElementById("commentText").value="";
+  document.getElementById("commentFeedback").textContent="";
+  renderComments();
+  go(4);
+  var page=document.getElementById("t4");
+  page.dataset.returnTab="1";
+}
+function renderComments(){
+  var area=document.getElementById("savedComments");
+  area.innerHTML="";
+  var arr=commentStore[activeCommentId]||[];
+  if(!arr.length){area.innerHTML='<div class="saved-comment" style="color:var(--mute)">Hozircha fikr yoʻq. Birinchi boʻlib fikringizni yozing.</div>';return}
+  arr.slice().reverse().forEach(function(item){
+    var d=document.createElement("div");d.className="saved-comment";
+    var small=document.createElement("small");small.textContent=item.date||"Saqlangan fikr";
+    var text=document.createElement("div");text.textContent=item.text;
+    d.appendChild(small);d.appendChild(text);area.appendChild(d);
+  });
+}
+document.getElementById("commentSave").onclick=function(){
+  var text=document.getElementById("commentText").value.trim();
+  if(!text){document.getElementById("commentFeedback").textContent="Avval fikringizni yozing.";return}
+  if(!commentStore[activeCommentId])commentStore[activeCommentId]=[];
+  commentStore[activeCommentId].push({text:text,date:new Date().toLocaleString("uz-UZ")});
+  persistComments();document.getElementById("commentText").value="";
+  document.getElementById("commentFeedback").textContent="Fikringiz ushbu qurilmada saqlandi.";
+  renderComments();
+};
+document.getElementById("commentClear").onclick=function(){document.getElementById("commentText").value="";document.getElementById("commentFeedback").textContent="Matn tozalandi.";};
+document.getElementById("commentBack").onclick=function(){go(1);};
+function go(i){
+  document.querySelectorAll("nav button").forEach(function(x){x.classList.toggle("on",x.dataset.go==i)});
+  document.querySelectorAll(".tab").forEach(function(x,j){x.classList.toggle("on",j==i)});
+  document.body.dataset.activeTab=String(i);
+  window.scrollTo(0,0);
+}
+document.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){go(b.dataset.go)}});
+var touchX=null;
+document.addEventListener("touchstart",function(e){if(e.touches&&e.touches.length===1)touchX=e.touches[0].clientX},{passive:true});
+document.addEventListener("touchend",function(e){
+  if(touchX===null||!e.changedTouches||!e.changedTouches.length)return;
+  var dx=e.changedTouches[0].clientX-touchX;touchX=null;
+  if(Math.abs(dx)<85)return;
+  if(document.getElementById("t4").classList.contains("on")&&Math.abs(dx)>=85){go(1)}
+},{passive:true});
+</script>
+</body>
+</html>
