@@ -89,7 +89,7 @@ nav button{all:unset;flex:1;text-align:center;padding:9px 0 8px;font-size:11.5px
 nav button b{display:block;font-size:21px;line-height:1.25}
 nav button.on{color:var(--red);font-weight:700}
 nav button:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
-@media(max-width:390px){.tl{padding-left:31px}.n{left:-31px;width:24px;height:24px;line-height:20px}.it{gap:5px}.entry{gap:6px;padding:6px}.it button{gap:7px;padding:5px 0}.ck{width:22px;height:22px}.yr{min-width:38px;font-size:16px}.w{padding:8px 7px;font-size:11px}.entry .yr{min-width:35px}.na{padding:6px 6px;font-size:10px}.t{font-size:14px}.k{font-size:11.5px}}
+@media(max-width:390px){.na{width:76px;height:25px;padding:0 3px;font-size:10px;flex:0 0 76px}.tl{padding-left:31px}.n{left:-31px;width:24px;height:24px;line-height:20px}.it{gap:5px}.entry{gap:6px;padding:6px}.it button{gap:7px;padding:5px 0}.ck{width:22px;height:22px}.yr{min-width:38px;font-size:16px}.w{padding:8px 7px;font-size:11px}.entry .yr{min-width:35px}.na{padding:6px 6px;font-size:10px}.t{font-size:14px}.k{font-size:11.5px}}
 
 /* MARVEL YU — zamonaviy quyuq-yashil glassmorphism dizayni */
 :root{--bg:#061711;--card:rgba(16,48,36,.72);--ink:#effaf3;--mute:#a8c4b3;--red:#20b477;--gold:#a7f3d0;--line:rgba(164,226,190,.16);--hd:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--bd:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;color-scheme:dark}
@@ -129,9 +129,9 @@ body::before{background:#0a3324}
 .entry:focus-within,.entry:hover{border-color:rgba(83,228,151,.55);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .ck{border-color:rgba(176,225,193,.28);border-radius:8px}
 .nt{color:#7ce7ae}
-.w{background:linear-gradient(135deg,#1bb879,#08784d);color:#fff;border:1px solid rgba(184,255,216,.2);border-radius:10px;box-shadow:0 5px 14px rgba(0,0,0,.18);padding:10px 12px}
+.w{background:transparent;color:#79dfaa;border:0;border-radius:5px;box-shadow:none;padding:3px 4px;font-size:11px;font-weight:600;gap:3px;text-decoration:none}.w:hover{background:rgba(84,230,160,.08);color:#a6f3ca}
 .w:hover{background:linear-gradient(135deg,#2ed28e,#0b8a59)}
-.na{background:rgba(6,23,17,.45);border-color:rgba(165,235,193,.16);color:#a8c4b3}
+.na{background:rgba(6,23,17,.45);border-color:rgba(165,235,193,.16);color:#a8c4b3;width:76px;height:25px;box-sizing:border-box;padding:0 3px;font-size:10px;line-height:1;white-space:nowrap;border-radius:6px;flex:0 0 76px}
 .dt{background:linear-gradient(145deg,#168b5a,#0b5037);border:1px solid rgba(191,255,218,.15);border-radius:13px}
 .lk{border-radius:18px}
 .lk .lg,.lk svg{border-radius:14px}
@@ -208,6 +208,53 @@ nav button b svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-wid
 .quick-links button:first-child::before{content:'⌂';display:grid;place-items:center;width:27px;height:27px;border:1px solid rgba(178,255,211,.3);border-radius:9px;background:linear-gradient(145deg,rgba(40,190,119,.28),rgba(7,74,48,.55));font-size:21px;line-height:1;color:#a7f3d0}
 @media(max-width:390px){.comment-top .comment-head h1{font-size:28px}.comment-trigger{min-height:34px}}
 
+
+
+/* Refined compact labels and cleaner line-icon styling */
+:root{--accent:#54e6a0;--accent-soft:rgba(84,230,160,.13);--accent-line:rgba(120,239,180,.26)}
+.sec{display:flex;align-items:center;gap:10px}
+.sec::before{content:"";width:4px;height:23px;border-radius:9px;background:linear-gradient(180deg,#8af7bd,#1ba96d);box-shadow:0 0 16px rgba(84,230,160,.22)}
+.tile,.lk,.fut,.box{transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+.tile{min-height:82px}
+.tile .ic{position:relative;overflow:hidden;display:grid;place-items:center}
+.line-icon{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.inline-icon{width:18px;height:18px;margin-right:5px}
+.device-icon{width:52px;flex:none;display:grid;place-items:center;color:#9fcbb4}
+.tile .ic .line-icon{width:30px;height:30px;color:#a7f3d0;position:relative;z-index:1}
+.tile .ic::after{content:none}
+.entry{align-items:stretch}
+.it .entry>button{gap:11px}
+.yr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:66px;align-self:stretch;font:inherit;color:var(--ink)}
+.year-label{font:800 16px/1.05 var(--hd);color:#a8f4c9;text-align:center;max-width:68px}
+.type-sticker{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:0;margin-top:3px;background:none;border:0;box-shadow:none;border-radius:0;color:#9fcbb4;font:500 10px/1.2 var(--bd);letter-spacing:0;white-space:nowrap}
+.type-sticker .sticker-icon{display:inline-grid;place-items:center;width:14px;height:14px;font-size:0;line-height:1}
+.type-sticker .sticker-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.film-sticker,.series-sticker{color:#9fcbb4}
+.it.done .year-label{color:#b6f8d3}
+.it .entry>button .ck{flex:none;width:22px;height:22px;display:grid;place-items:center;font-size:12px}
+.comment-trigger{border-color:rgba(84,230,160,.24);background:linear-gradient(90deg,rgba(27,169,109,.14),rgba(27,169,109,.05));color:#a6f3ca}
+.comment-trigger:hover{background:rgba(27,169,109,.2);border-color:rgba(84,230,160,.48)}
+.comment-trigger .bubble{display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:rgba(84,230,160,.12);font-size:12px}
+.comment-card textarea:focus{border-color:rgba(84,230,160,.55);box-shadow:0 0 0 3px rgba(84,230,160,.1)}
+.comment-save{background:linear-gradient(135deg,#1bb879,#08784d);border-color:rgba(184,255,216,.2)}
+.comment-save:hover{background:linear-gradient(135deg,#2ed28e,#0b8a59)}
+.comment-clear{border-color:var(--line)}
+.poster{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.poster:hover{transform:translateY(-3px);border-color:rgba(130,244,183,.4);box-shadow:0 24px 55px rgba(0,0,0,.42)}
+.poster-art{filter:drop-shadow(0 0 25px rgba(80,255,170,.16))}
+.quick-links button{transition:background .2s ease,border-color .2s ease}
+.quick-links button:hover{background:rgba(45,183,120,.2);border-color:rgba(130,244,183,.25)}
+.w{font-size:11px;white-space:nowrap;padding:3px 4px}
+@media(max-width:430px){
+  .yr{min-width:58px;gap:6px}
+  .year-label{font-size:14px;max-width:60px}
+  .type-sticker{font-size:10px;padding:0;gap:3px}
+  .it .entry>button{gap:8px}
+  .entry{padding-left:9px;padding-right:7px}
+  .comment-trigger{justify-content:flex-start;padding-left:12px}
+}
+@media(prefers-reduced-motion:reduce){.tile,.lk,.fut,.box,.poster,.quick-links button{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -230,16 +277,16 @@ nav button b svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-wid
   <div class="pg">
     <div class="sec">Boʻlimlar</div>
     <div class="tiles">
-      <button class="tile" data-go="1"><div class="ic">🎬</div><div><b>Xronologik tartib</b><span id="hp">48 ta film va serial</span></div><i>›</i></button>
-      <button class="tile" data-go="2"><div class="ic">🗓</div><div><b>Kelajak premyeralar</b><span>Yangi kinolar va sanalar</span></div><i>›</i></button>
-      <button class="tile" data-go="3"><div class="ic">📰</div><div><b>Yangiliklar</b><span>Marvel olamidan xabarlar</span></div><i>›</i></button>
+      <button class="tile" data-go="1"><div class="ic"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v14H3zM3 7l4-4h4L7 7m7 0 4-4h3v4M7 11h.01M12 11h.01M17 11h.01"/></svg></div><div><b>Xronologik tartib</b><span id="hp">48 ta film va serial</span></div><i>›</i></button>
+      <button class="tile" data-go="2"><div class="ic"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M8 17h3"/></svg></div><div><b>Kelajak premyeralar</b><span>Yangi kinolar va sanalar</span></div><i>›</i></button>
+      <button class="tile" data-go="3"><div class="ic"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><div><b>Yangiliklar</b><span>Marvel olamidan xabarlar</span></div><i>›</i></button>
     </div>
-    <div class="sec">Qayerda koʻrish</div>
-    <a class="lk" id="chl" rel="noopener"><img class="lg" alt="VIBE CINEMA UZ" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAB4AHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5aooooAKmsrW5vbuKzsrea5uZm2xQwoXdz6BRyTXZfB/4X+Jvidr/APZ2hQCO1hIN5fyg+TbKfX+8x7KOT7DmvvT4PfB7wf8ADLT1XSLMXWqMmLjU7lQ08h7gH+Bf9lfxzQB8s/DP9lLxt4hSK98VXUXhmyfB8ll867Yf7gO1P+BHPtX0F4Q/Zk+FGgxo13o02u3AAzLqU5cE/wDXNcJ+hr2iigDF0jwj4W0eNU0rw5pFiq9PIso0/kK2PLj2bNi7f7uOKdRQBi6v4R8LaxGyar4c0i+Vuvn2Ub/zFeY+L/2ZPhRr0btaaNNoVwQcS6bOUAP/AFzbKfoK9oooA+FfiZ+yl428PJLe+FbqLxNZJk+Sq+TdqP8AcJ2v/wABOfavn+9tbmyu5bO9t5ra5hbbLDMhR0PoVPINfrVXnfxh+D3g/wCJunsur2YtdUVMW+p2yhZ4z2BP8a/7LfhigD806K7j4wfC/wATfDHX/wCztdgElrMSbO/iB8m5Uen91h3U8j3HNcPQAUUUUAFdx8FfhvrHxO8Zw6Hp26C1jAlv7wrlbaLPJ92PRR3PsDXG2VrcXt5BZWcLz3NxIsUMSDLO7HCqPckiv0m/Z++G1n8Mvh/a6QEjfVLgCfU7hRzJMRyAf7qj5R9M9zQB0/gPwloXgnwza+HvD1ktrZW69OryN3dz/Ex7mt2iigAoopnnRed5PmJ5u3ds3Ddj1x6UAPoqo+p6cjFWv7VWHUGZQR+tfMnxh+IXxJ8V/FbRfhf4N0a28PatbaidRtdYk1JZIbi3jVgGAUcqyk7k+Y9sd6APqaiuB+FHxDi8Vvf+H9Zto9J8Y6Kwi1fS/MDbDgYliP8AHEwIIPbIB9++oAKKKKAMLx54S0Lxt4ZuvD3iGyW6srhenR427Oh/hYdjX5yfGr4b6x8MfGc2h6juntZAZbC8C4W5izwfZh0Ydj7EV+nFed/tA/Daz+Jvw/utIKRpqluDPplww5jmA4BP91h8p+uewoA/NOipr21uLK8nsryF4Lm3kaKaJxhkdThlPuCDRQB9AfsM+Bk8Q/Ee48VXsO+y8PxhodwyGupMhP8AvlQzfXbX3VXi/wCxj4bTQfgXpd2UC3GsSSahKcckMdsY/wC+FX869ooAKKKKACvlv45p8SpP2rNPT4WXNhBrf/CH5la92eX9n+1Nu+8CM7tnbNfUlfLnxx8P+OfEv7Vun2Hw/wDFC+GtUTwd5st4wJBhF0wKcA9WKH8KAPh/xYdSXxTqy6u6tqIvZhdlCNpl3nfjHGN2elVNL1G+0vUbfUtOu57S8tpBLBPE5V43ByGBHQ1a8WW97a+KdWtdSuRdX0N7NHczZz5kgkYM3Pqcn8ay6APePgNqvhJNP8V+Ote+IWp6F8RLEm9026lbelz3ZWXrOZGOxkOMAgjPOPsv9nX4z6J8W/DPnRCOx161Qf2hpxblO3mR55aMnv2PB9/y9FfQGk/FnxD4vPw28LfDvwhZaR4z0R/s8F/aMEFwm0gxleAI2GXkDEjIJGOaAP0XorivhZ40uvE9nd6dr2jzaJ4n0pxDqlg6korHpJC/SSJxyCDx0Pv2tABRRRQB8K/tzeBk8PfEe38VWUOyy8QRlptowFuo8B/++lKt9d1FfQX7Z3htNe+BeqXYQNcaPJHqERxyAp2yD/vhm/KigD07wFpqaP4I0PSo12raafBCB/uxqK2qbDt8pNn3dox9KdQAUUUUAFfLXxz8E6j49/av07RtM8X3vhSaLwebg3tpnzGUXLL5fDrwdwPX+GvqWvlH9oPwb4Y8c/tT6bo/izxJJ4fsI/CP2hbiO6jgZ5BcuoTc/HIZjjr8tAHxP4qs307xPqunyXZvHtb2aFrg9ZSrlS/U9cZ696za0fE1nbWHiPU7GyuRdWtvdyxQz7g3morkK2RwcgA8etZ+Pp+dACV9BfsTeCdL8deLfEWm6hLcWlzb6alzYX9o+y4sp1mTbLG3Y9RjoQSDXz9j6fnX1R/wTd/5KX4lGR/yBh/6OSgD7tiQxxqhdnKgDc3U+5p1FFABRRRQBi+PdNTWPBGuaVIu5bvT54SP96NhRWxNt8p9/wB3ac/SigDH8BakmseCND1WNty3enwTA/70amtlmVRliBzjk14x+xj4kTXvgXpdoXDXGjySafKM8gKd0Z/74Zfyrs/jh4Rfxv8ADDWtAtpGivpIfOsJVJBjuYzviOR0+ZQPoTQB2jMq4yQMnAyaQyRgZLrjOOor5s8AeLX+NvxJ8EMQ4sPCelDVdaj5AGrMTCkTe6FHcfWvKtRsZ9Z8P+EdMXQX8SG48e68h0s3xtftQHO3zc/LjGc+3vQB907127tw2+ueKyNX8O+GNcuUn1fQ9H1OdU2K91aRzMF64BYE45PHvXyLp8Wo+GfA3xs8I3+h3fhTOhQ6jY6GdRN7HbxkFHkWbcfmZgMrx09q9N/Zl8BWFheWfiK8+GNp4avYtOiaz1GPxA1412ZI8OTFnCZU55H8WO1AHsZ8C+BwP+RO8Ogf9gyH/wCJpv8Awg/gXbu/4RDw5t9f7Nhx/wCg15j+0LKmrfEnwJ4H8Q6rc6V4P1j7W9+8VwbcXk8aqYrd5QRtU5Jxkbvwrnvjd4R8H+Cv2bvGth4JvJjbtd2TTW41N7lbZ/tEPyqCxMeQckd8/SgD3H/hBfA//QneHf8AwWQ//E1b0jQPDeiyvPpGjaTp0kg2PJa2scRYZzglQMjPavne18R+OvDfx0+JGu6NHNrXhrS7jTjrGiplphFJaqTc24/vps+ZP4h7gV5nOyeJ/h14K+xaV/wkVtqXxB1VorGS8a0W8jbcyqZOqAgg0AfdKujfdZT9DTiQBkmvlbx34Wk8H/AVJ/Dnh2P4f+IL7xLp4ZLbVmvxE4n2RSeZk54bJX6g5qD4n+Kvi5rCeGbXxFpC+GtM0vxRpun6q6OcazdGcEPD6W4VVfnqzAfw0AfV5YAgEgE9OetLXxt+1L4+tbr4v3C2vi2HSp/AFpFe6dbM5Av9RaRHki4HaJdvPc47mvrTwhrtj4n8L6Z4h0yQSWeo2sdzCQf4XUHB9x0PuKAIvHupJo/gjXNVkbatpp88xP8AuxsaK8x/bO8SJoPwL1S0DhbjWJI9PiGeSGO6Q/8AfCt+dFAHz7+wz45Tw98R7jwrezbLLxBGFh3HAW6jyU/76Usv12191V+StldXFleQXtnM8FzbyLLDKhwyOpyrD3BAr9Jv2fviTZ/E34f2urh401S3Ag1O3U8xzAckD+6w+YfXHY0AdP4U8H+GfCs+pz+H9HttOk1W6N3etED++lOcscnjqeBgcmsHU/hB8OdS0yHTbzwzBJawXs19EgnlUrPN/rHBVgct9cV3dFAHEaT8Jvh3pWi6to9h4XtIrPWIxFqKl5Ge4QdFZ2Yvgemag8G/Br4Z+Dtfh17w14UtdO1KFWSOeOWVioYYYYZiOR7V31FAGP4w8LeHvF+jPo/ibSLTVbB2DGG4j3AMOjDuD7jBrn7D4SfDiw8J33hWy8Jafb6PqDxyXdtGGHnsjBkLNnccEAjmu4ooAyNI8NaHpOt6rrenafHb6hq5iN/OpYmcxLtTOTgYXjjFc9r/AMJPhzrukrpOqeFLGaxW9lv1gUvGizyffcBWGCfTpXcUUAcFo3wc+Guj6PPpGm+Fba2sbi7gvJYVllIaaE5jfJbOVP4etdR4l8OaL4kt7S31uwjvIrS8ivYFdiNk8ZyjjBHIP4Vq0UAc7pPgbwlpf9oGz0CxVtRupLy8aSPzWmmk++zF8nn06Vd8J+HdF8KaDBoXh+xSw0233eTbozMqbmLEDcScZJOPetWvO/2gfiTZ/DL4f3Wrl431S4Bg0y3Y8yTEcEj+6o+Y/THcUAfLP7c3jlPEPxHt/CtlNvsvD8ZWbachrqTBf/vlQq/XdRXz/e3Vxe3k97eTPPc3EjSzSucs7scsx9ySaKAIa7j4K/EjWPhj4zh1zTt09rIBFf2ZbC3MWeR7MOqnsfYmuHooA/VPwH4t0Lxt4ZtfEPh69W6srhevR427o4/hYdxW7X5j/B/4oeJvhjr/APaOhTiS1mIF5YSk+TcqPX+6w7MOR7jivvT4PfGHwf8AE3T1bSLwWuqKmbjTLlgs8Z7kD+Nf9pfxxQB6JRRRQAUUUUAFFFFABRRXnfxh+MPg/wCGWns2r3gutUZM2+mWzBp5D2JH8C/7TfhmgDp/Hni3QvBPhm68Q+Ib1bWyt169XkbsiD+Jj2FfnJ8aviRrHxO8Zza5qO6C1jBisLMNlbaLPA92PVj3PsBR8YPih4m+J2v/ANo67OI7WEkWdhET5Nsp9P7zHux5PsOK4egAooooAKKKKACprK6ubK7ivLK4mtrmFt0U0LlHQ+oYcg0UUAfQHwz/AGrfG3h5IrLxVaxeJrJMDzmbybtR/vgbX/4EM+9fQXhD9pv4Ua9Gi3eszaFcEDMWpQFAD/10XKfqKKKAPTtI8XeFtYjV9K8R6RfK3TyL2N/5GtjzI9m/eu3+9niiigDH1fxd4W0eNn1XxHpFiq9fPvY0/ma8x8X/ALTfwo0GN1tNZm124AOItNgLgn/ro2E/U0UUAfPvxM/at8beIUlsvCtrF4ZsnyPOVvOu2H++RtT/AICM+9fP97dXN7dy3l7cTXNzM26WaZy7ufUseSaKKAIaKKKACiiigD//2Q=="><div><b>Marvel pleylisti</b><span>VIBE CINEMA UZ kanali, VK Video</span></div><i>›</i></a>
+    <div class="sec">Qanday koʻrish mumkin</div>
     <a class="lk" href="https://apps.apple.com/app/id6447614666" target="_blank" rel="noopener"><svg viewBox="0 0 52 52" aria-hidden="true"><rect x="0" y="6" width="40" height="40" rx="11" fill="#2d8cff"/><rect x="8" y="2" width="42" height="42" rx="12" fill="#ff2b45"/><path d="M23 14l14 9-14 9z" fill="#fff"/></svg><div><b>VK Video</b><span>Avval ilovani App Storeʼdan oʻrnating</span></div><i>›</i></a>
-    <a class="lk"><div style="font-size:34px;width:52px;text-align:center;flex:none">🤖</div><div><b>Android va Samsung</b><span>Google Playʼdan olib tashlangan. Galaxy Storeʼda “VK Видео” ni qidiring</span></div></a>
-    <div class="box"><h3>🎬 Filmlar</h3><p>Avval kinoteatrlarda chiqadi. Keyin onlayn platformalarga tushadi.</p></div>
-    <div class="box"><h3>📺 Seriallar</h3><p>Disney+ va boshqa platformalarda. Disney+ sizning mintaqangizda ishlashini obuna oldidan tekshiring.</p></div>
+    <a class="lk" id="chl" rel="noopener"><img class="lg" alt="VIBE CINEMA UZ" src="data:image/jpeg;base64,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"><div><b>Marvel pleylisti</b><span>VIBE CINEMA UZ kanali, VK Video</span></div><i>›</i></a>
+    <a class="lk"><div class="device-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg></div><div><b>Android va Samsung</b><span>Google Playʼdan olib tashlangan. Galaxy Storeʼda “VK Видео” ni qidiring</span></div></a>
+    <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v14H3zM3 7l4-4h4L7 7m7 0 4-4h3v4"/></svg> Filmlar</h3><p>Avval kinoteatrlarda chiqadi. Keyin onlayn platformalarga tushadi.</p></div>
+    <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 1 4 3 4-3"/></svg> Seriallar</h3><p>Disney+ va boshqa platformalarda. Disney+ sizning mintaqangizda ishlashini obuna oldidan tekshiring.</p></div>
   </div>
 </section>
 <section class="tab" id="t1">
@@ -247,11 +294,11 @@ nav button b svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-wid
   <div class="pg">
     <div class="chips" id="chips">
       <button class="on" data-f="all">Hammasi</button>
-      <button data-f="f">🎬 Filmlar</button>
-      <button data-f="s">📺 Seriallar</button>
+      <button data-f="f"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v14H3zM3 7l4-4h4L7 7m7 0 4-4h3v4"/></svg> Filmlar</button>
+      <button data-f="s"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 1 4 3 4-3"/></svg> Seriallar</button>
     </div>
     <ol class="tl" id="l1"></ol>
-    <div class="box"><h3>📌 Muhim maʼlumot</h3><p>Kanaldagi havolasi hozircha mavjud boʻlmagan seriallarni oʻtkazib yuborsangiz ham, Marvel filmlarining xronologik tartibi buzilmaydi. Hikoyani toʻliqroq tushunish uchun asosan uchta serialni koʻrish tavsiya etiladi: <b>WandaVision</b>, <b>Lochin va Qishki askar</b> hamda <b>Loki</b>. Hozircha platformada faqat <b>Loki</b> seriali mavjud. Qolgan ikki serial tez orada joylanadi. Yangilanishlarni kuzatib boring!</p></div>
+    <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6 3 3H6l3-3zM12 12v9"/></svg> Muhim maʼlumot</h3><p>Ushbu roʻyxatda havolasi berilmagan boshqa Marvel seriallarini hozircha oʻtkazib yuborishingiz mumkin. Ular asosiy xronologik tomosha tartibiga taʼsir qilmaydi. Voqealar ketma-ketligini tushunish uchun yuqoridagi tartibga amal qiling.</p></div>
     <button class="reset" id="rs">Belgilarni tozalash</button>
   </div>
 </section>
@@ -340,7 +387,10 @@ var L=[
 ["Spider-Man: Brand New Day","Oʻrgimchak-odam: Yangi kun","2026","f"]];
 var MO=["yan","fev","mar","apr","may","iyun","iyul","avg","sen","okt","noy","dek"];
 var F=[["Avengers: Doomsday","Qasoskorlar: Qiyomat kuni",2026,11,18],["Avengers: Secret Wars","Qasoskorlar: Maxfiy urushlar",2027,11,17]];
-var NEWS=[];
+var NEWS=[[
+  "Vijin izlanishi — yangi serial",
+  "“Vijin izlanishi” serialining premyerasi 13-oktyabrda bo‘lib o‘tdi. Hozircha serialni faqat Yangi TV ilovasida tomosha qilish mumkin. Qismlar jadvali: 20-oktyabr — 3–4-qismlar; 27-oktyabr — 5–6-qismlar; 3-noyabr — 7-qism; 10-noyabr — 8-qism, ya’ni final."
+]];
 var LINK={};[[1,"456239758"],[2,"456240198"],[3,"456241101"],[4,"456241102"],[5,"456239234"],[6,"456239744"],[7,"456239742"],[8,"456240765"],[9,"456239745"],[10,"456239194"],[11,"456239753"],[12,"456239774"],[13,"456239743"],[14,"456240207"],[15,"456239195"],[16,"456240209"],[17,"456240200"],[18,"456239169"],[19,"456239436"],[20,"456239444"],[21,"456239502"],[22,"456239765"],[23,"456240224"]].forEach(function(x){LINK[x[0]]="https://vkvideo.ru/video-229908696_"+x[1]+"?pl=-229908696_50"});
 LINK[27]="https://vkvideo.ru/video-229908696_456240208?pl=-229908696_50";
 LINK[28]="https://vkvideo.ru/video-229908696_456241245?pl=-229908696_50&t=3s";
@@ -356,7 +406,9 @@ LINK[45]="https://vkvideo.ru/video-229908696_456240205?pl=-229908696_50";
 LINK[46]="https://vkvideo.ru/video-229908696_456239772?pl=-229908696_50";
 LINK[47]="https://vkvideo.ru/video-229908696_456240001?pl=-229908696_50";
 LINK[48]="https://vkvideo.ru/video-229908696_456241247?t=12s";
-LINK[24]="https://vkvideo.ru/video/playlist/-229908696_85";var NA=[];
+LINK[25]="https://freekino.net/serie/3030-vanda-vijin-1-fasl-1-qism";
+LINK[24]="https://vkvideo.ru/video/playlist/-229908696_85";
+LINK[26]="https://vkvideo.ru/video/playlist/-230696351_13";var NA=[];
 var seen={};
 try{seen=JSON.parse(localStorage.getItem("myu2")||"{}")}catch(e){}
 function save(){try{localStorage.setItem("myu2",JSON.stringify(seen))}catch(e){}}
@@ -376,10 +428,10 @@ function build(){
     t.textContent=x[1];
     var k=document.createElement("span");k.className="k";k.textContent=x[0];t.appendChild(k);
     if(x[4]){var n=document.createElement("span");n.className="nt";n.textContent=x[4];t.appendChild(n)}
-    b.children[2].innerHTML=x[2]+"<small>"+(x[3]=="f"?"🎬":"📺")+"</small>";
+    b.children[2].innerHTML="<span class=\"year-label\">"+x[2]+"</span><small class=\"type-sticker "+(x[3]=="f"?"film-sticker":"series-sticker")+"\"><span class=\"sticker-icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">"+(x[3]=="f"?"<path d=\"M4 7h16v13H4zM4 7l4-4h4l-4 4M14 7l4-4h2v4\"/><path d=\"M7 11h.01M12 11h.01M17 11h.01\"/>":"<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/>")+"</svg></span>"+(x[3]=="f"?"Film":"Serial")+"</small>";
     b.setAttribute("aria-pressed",seen[id]?"true":"false");
     b.onclick=function(){if(seen[id]){delete seen[id]}else{seen[id]=1}save();li.classList.toggle("done");b.setAttribute("aria-pressed",seen[id]?"true":"false");stat()};
-    if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.textContent="▶ Koʻrish";entry.appendChild(a)}else if(NA.indexOf(id)>-1){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";entry.appendChild(m)}
+    if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.innerHTML="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";entry.appendChild(a)}else if(NA.indexOf(id)>-1){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";entry.appendChild(m)}
     var commentBtn=document.createElement("button");
     commentBtn.type="button";
     commentBtn.className="comment-trigger";
