@@ -345,15 +345,15 @@ body.menu-open .drawer-shade{opacity:1;visibility:visible}
 .drawer-panel.show{display:block}
 .drawer-panel label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
 .drawer-panel input{accent-color:#83efb1}
-.it .entry{position:relative;padding-right:104px}
+.it .entry{position:relative;padding-right:146px}
 .it .entry>button{min-width:0;padding-right:0}
 .it .entry>button .t{min-width:0;overflow-wrap:anywhere}
-.it .entry .fav-btn{position:absolute;right:67px;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:36px;height:36px;margin:0;padding:0;border:1px solid rgba(131,239,177,.25);background:rgba(131,239,177,.08);color:#83efb1;border-radius:10px;font-size:24px;line-height:1;cursor:pointer;flex:none}
+.it .entry .fav-btn{position:absolute;right:104px;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:36px;height:36px;margin:0;padding:0;border:1px solid rgba(131,239,177,.25);background:rgba(131,239,177,.08);color:#83efb1;border-radius:10px;font-size:24px;line-height:1;cursor:pointer;flex:none}
 .it .entry .fav-btn.active{background:rgba(131,239,177,.2);color:#ff6685}
 .it .entry>a.w,.it .entry>.na{position:absolute;right:7px;top:50%;transform:translateY(-50%);white-space:nowrap}
 @media(max-width:430px){
-  .it .entry{padding-right:96px}
-  .it .entry .fav-btn{right:61px;width:32px;height:32px;font-size:23px}
+  .it .entry{padding-right:140px}
+  .it .entry .fav-btn{right:98px;width:32px;height:32px;font-size:23px}
   .it .entry>a.w,.it .entry>.na{right:5px}
 }
 .movie-votes{gap:9px;flex-wrap:wrap}
@@ -573,11 +573,42 @@ button,a{-webkit-tap-highlight-color:transparent}
 .cat-ep em{display:grid;place-items:center;min-width:38px;height:38px;border-radius:12px;background:rgba(52,217,142,.14);color:#7bf0b4;font-style:normal;font-weight:800}
 .cat-ep:hover{border-color:rgba(91,231,157,.5);background:rgba(17,62,44,.82)}
 .cat-seasons button{font-weight:700;transition:background .2s,color .2s,border-color .2s}
-.ser-ov .top{min-height:150px;background-size:cover;background-position:center 18%}
+.ser-ov .top{min-height:150px;position:relative;overflow:hidden;background:rgba(8,48,34,.55)!important;border:1px solid rgba(131,239,177,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 34px rgba(0,0,0,.35);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+.ser-ov .top::before{content:"";position:absolute;inset:-24px;background:var(--serbg,none) center 18%/cover;filter:blur(16px) saturate(.75) hue-rotate(-8deg);opacity:.5;z-index:0}
+.ser-ov .top::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(47,214,138,.22),rgba(6,40,28,.78) 55%,rgba(6,23,17,.95));z-index:0;pointer-events:none}
+.ser-ov .top>*{position:relative;z-index:1}
 .ser-ov .top h1{text-shadow:0 3px 22px rgba(0,0,0,.6)}
 .ser-ov:not([hidden]){animation:serIn .28s var(--ease)}
 @keyframes serIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.ser-ov:not([hidden]){animation:none}}
+</style>
+<style>
+.it .entry.pcard{display:flex!important;align-items:stretch!important;gap:12px!important;padding:12px!important;border-radius:20px!important;background:rgba(10,38,28,.78)!important}
+.pcard .pc{flex:none;width:92px;display:flex;flex-direction:column;gap:6px}
+.pcard .pimg{position:relative;width:92px;aspect-ratio:2/3;border-radius:14px;border:2px solid #34d683;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;cursor:default;box-sizing:border-box}
+.pcard .pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pcard .pimg.has .pcap{display:none}
+.pcard .pimg.clk{cursor:pointer}
+.pcard .pcap{position:relative;padding:8px 6px;font-size:12px;line-height:1.2;text-align:center;color:#dff7e8;font-weight:600}
+.pcard .pimg .ck{pointer-events:auto;position:absolute;top:6px;left:6px;z-index:2;width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.55);color:transparent;font-size:12px;cursor:pointer;backdrop-filter:blur(6px)}
+.it.done .pcard .pimg .ck{background:#a7f3d0;border-color:#a7f3d0;color:#073b28}
+.pcard .pc .movie-votes{display:flex!important;flex-wrap:nowrap!important;justify-content:center!important;gap:4px!important;margin:0!important;width:100%}
+.pcard .pc .movie-vote{flex:1;min-height:28px!important;padding:2px 4px!important;font-size:13px!important;gap:4px!important;border:0!important;background:transparent!important;justify-content:center}
+.pcard .pc .movie-vote svg{width:16px!important;height:16px!important}
+.pcard .pi{flex:1;min-width:0;display:flex;flex-direction:column}
+.it .entry.pcard .pi .tb{all:unset!important;display:block!important;cursor:default!important;pointer-events:none;color:#fff!important;font-size:19px!important;font-weight:700!important;line-height:1.15!important;overflow-wrap:anywhere}
+.pcard .pi .tb .k{display:block;margin-top:5px;font-size:14px;font-weight:400;line-height:1.25;color:rgba(205,232,217,.7)}
+.pcard .pi .tb .nt{display:block;margin-top:4px;font-size:12px;font-weight:400;color:rgba(131,239,177,.8)}
+.pcard .chips2{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pcard .chip{padding:4px 12px;border-radius:999px;border:1px solid rgba(83,228,151,.35);background:rgba(52,214,131,.12);color:#6ff0a8;font-size:13px;line-height:1.2}
+.pcard .pa{margin-top:auto;padding-top:12px;display:flex;align-items:center;gap:10px}
+.pcard .pa a.w,.pcard .pa .na{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;height:40px;border-radius:999px;background:#34d683;color:#04281a;font-weight:700;font-size:15px;text-decoration:none;position:static!important;transform:none!important;right:auto!important;width:auto!important;white-space:nowrap}
+.pcard .pa .na{background:rgba(255,255,255,.08);color:rgba(205,232,217,.65);font-weight:500;font-size:13px}
+.pcard .pa a.w svg{width:15px;height:15px}
+.it .entry.pcard .pa .fav-btn{position:static!important;transform:none!important;right:auto!important;top:auto!important;flex:none;width:40px!important;height:40px!important;display:grid!important;place-items:center;border-radius:50%!important;border:1.5px solid rgba(83,228,151,.5)!important;background:rgba(52,214,131,.1)!important;color:#34d683!important;padding:0!important;font-size:0!important}
+.pcard .pa .fav-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.it .entry.pcard .pa .fav-btn.active{color:#ff6685!important;background:rgba(255,102,133,.12)!important;border-color:rgba(255,102,133,.5)!important}
+.pcard .pa .fav-btn.active svg{fill:currentColor}
 </style>
 </head>
 <body>
@@ -627,6 +658,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     <a class="lk"><div class="device-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg></div><div><b>iPhone</b><span>App Storeʼda yoʻq. Yuqoridagi video boʻyicha vkvideo.ru ni brauzerda ochib, bosh ekranga qoʻshing</span></div></a>
     <a class="lk"><div class="device-icon"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg></div><div><b>Android va Samsung</b><span>Google Playʼdan olib tashlangan. Galaxy Storeʼda “VK Видео” ni qidiring</span></div></a>
     <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v14H3zM3 7l4-4h4L7 7m7 0 4-4h3v4"/></svg> Filmlar</h3><p>Avval kinoteatrlarda chiqadi. Keyin onlayn platformalarga tushadi.</p></div>
+    <p style="text-align:center;font-size:11px;opacity:.6;margin:18px 0 6px;line-height:1.5">Poster rasmlari TMDB API orqali olinadi. Bu sayt TMDB tomonidan tasdiqlanmagan yoki sertifikatlanmagan.</p>
     <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 1 4 3 4-3"/></svg> Seriallar</h3><p>Disney+ va boshqa platformalarda. Disney+ sizning mintaqangizda ishlashini obuna oldidan tekshiring.</p></div>
   </div>
 </section>
@@ -801,8 +833,8 @@ LINK[26]="https://vkvideo.ru/video/playlist/-230696351_13";// ===== Seriallar: "
 // Misol: SER[24]={seasons:[{name:"1-mavsum",eps:[20,21,22]},{name:"2-mavsum",eps:[]}]};
 // Qism nomini ozgartirish kerak bolsa: eps:[["Maxsus qism",25],26]
 var SER={};
-// Loki: 1-mavsumning 8 va 10-postlari. "more" = qolgan qismlar uchun eski VK havola (hozircha).
-SER[24]={more:LINK[24],seasons:[{name:"1-mavsum",eps:[8,10]},{name:"2-mavsum",eps:[]}]};
+// Loki: 1-mavsum 6 qism (postlar 8,10,14,15,16,17) botga ulanadi. 1-mavsum to'liq, VK havola faqat 2-mavsumda ("more").
+SER[24]={seasons:[{name:"1-mavsum",eps:[8,10,14,15,16,17]},{name:"2-mavsum",eps:[],more:LINK[24]}]};
 // Vijin (VisionQuest): 1-mavsum, 4 ta qism
 SER[48]={seasons:[{name:"1-mavsum",eps:[9,11,12,13]}]};
 Object.keys(SER).forEach(function(k){if(!LINK[k])LINK[k]="#"});
@@ -824,7 +856,7 @@ function openSeries(id){
   var tot=0;d.seasons.forEach(function(s){tot+=(s.eps||[]).length});
   serOv.querySelector(".cat-head p").textContent="Serial"+(tot?" · "+tot+" qism":"");
   var pi=document.querySelector('.poster[data-ser="'+id+'"] .poster-image'),tp=serOv.querySelector(".top");
-  tp.style.backgroundImage=pi&&pi.src?'linear-gradient(180deg,rgba(6,23,17,.5),rgba(6,23,17,.94)),url("'+pi.src+'")':"";
+  tp.style.setProperty("--serbg",pi&&pi.src?'url("'+pi.src+'")':"none");
   serOv.hidden=false;document.body.style.overflow="hidden";serOv.scrollTop=0;
   renderSeries();
   try{track("watch",id)}catch(e){}
@@ -835,8 +867,9 @@ function renderSeries(){
   se.innerHTML="";se.style.display="";
   d.seasons.forEach(function(s,j){var b=document.createElement("button");b.type="button";b.textContent=s.name;if(j===serS)b.className="on";b.onclick=function(){serS=j;renderSeries()};se.appendChild(b)});
   var mo=serOv.querySelector(".ser-more");mo.innerHTML="";
-  if(d.more&&d.more!=="#"){
-    var ma=document.createElement("a");ma.className="cat-ep";ma.href=d.more;ma.target="_blank";ma.rel="noopener";
+  var mv=d.seasons[serS].more||d.more;
+  if(mv&&mv!=="#"){
+    var ma=document.createElement("a");ma.className="cat-ep";ma.href=mv;ma.target="_blank";ma.rel="noopener";
     var me=document.createElement("em");me.innerHTML=SER_PLAY;
     var mb=document.createElement("b");mb.textContent="Qolgan qismlar VK’da";
     var mi=document.createElement("i");mi.textContent="›";
@@ -934,6 +967,34 @@ function makeActRow(id){
   var on=!!later[id];a.classList.toggle("active",on);a.setAttribute("aria-pressed",on?"true":"false");a.querySelector("span").textContent=on?"Saqlandi":"Keyin koʻraman";
   return row;
 }
+// Poster rasmlari: id -> TMDB poster yo'li (masalan POSTER[1]="/abc.jpg"). Bo'sh bo'lsa rangli blok ko'rinadi.
+var POSTER={};
+/* ===== TMDB posterlari =====
+   TMDB_KEY: themoviedb.org -> Settings -> API dan olingan v3 API kalit (yoki v4 "Read Access Token", eyJ... bilan boshlanadi).
+   Kalitni shu yerga yozing yoki saytni ?tmdb=KALIT bilan bir marta oching (brauzerda saqlanadi). */
+var TMDB_KEY="dd8c296bd656c423d190a0b327505a5a";
+try{var _q=new URLSearchParams(location.search).get("tmdb");if(_q){localStorage.setItem("myu-tmdbkey",_q)}if(!TMDB_KEY)TMDB_KEY=localStorage.getItem("myu-tmdbkey")||""}catch(e){}
+var TMDB_IDS={"Captain America: The First Avenger":["m",1771],"Captain Marvel":["m",299537],"Iron Man":["m",1726],"Iron Man 2":["m",10138],"The Incredible Hulk":["m",1724],"Thor":["m",10195],"The Avengers":["m",24428],"Iron Man 3":["m",68721],"Thor: The Dark World":["m",76338],"Captain America: The Winter Soldier":["m",100402],"Guardians of the Galaxy":["m",118340],"Guardians of the Galaxy Vol. 2":["m",283995],"Avengers: Age of Ultron":["m",99861],"Ant-Man":["m",102899],"Captain America: Civil War":["m",271110],"Black Widow":["m",497698],"Black Panther":["m",284054],"Spider-Man: Homecoming":["m",315635],"Doctor Strange":["m",284052],"Thor: Ragnarok":["m",284053],"Ant-Man and the Wasp":["m",363088],"Avengers: Infinity War":["m",299536],"Avengers: Endgame":["m",299534],"Loki":["t",84958],"WandaVision":["t",85271],"The Falcon and the Winter Soldier":["t",88396],"Shang-Chi and the Legend of the Ten Rings":["m",566525],"Spider-Man: No Way Home":["m",634649],"Hawkeye":["t",88329],"Moon Knight":["t",92749],"Doctor Strange in the Multiverse of Madness":["m",453395],"Ms. Marvel":["t",92782],"Thor: Love and Thunder":["m",616037],"Black Panther: Wakanda Forever":["m",505642],"Guardians of the Galaxy Vol. 3":["m",447365],"The Marvels":["m",609681],"Ant-Man and the Wasp: Quantumania":["m",640146],"Secret Invasion":["t",114472],"What If…? (Season 1)":["t",91363],"Echo":["t",122226],"Deadpool & Wolverine":["m",533535],"Agatha All Along":["t",138502],"Daredevil: Born Again (Season 1)":["t",202555],"Captain America: Brave New World":["m",822119],"Thunderbolts*":["m",986056],"The Fantastic Four: First Steps":["m",617126]};
+var TMDB_CACHE={};try{TMDB_CACHE=JSON.parse(localStorage.getItem("myu-tmdb2")||"{}")}catch(e){}
+function tmdbGet(path){
+  var h={},u="https://api.themoviedb.org/3"+path;
+  if(TMDB_KEY.indexOf("eyJ")===0){h.Authorization="Bearer "+TMDB_KEY}else{u+=(u.indexOf("?")>-1?"&":"?")+"api_key="+encodeURIComponent(TMDB_KEY)}
+  return fetch(u,{headers:h}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json()});
+}
+function tmdbClean(s){return s.replace(/\(.*?\)/g,"").replace(/…/g,"...").replace(/\*/g,"").replace(/\s+/g," ").trim()}
+function tmdbSame(a,b){a=tmdbClean(a).toLowerCase();b=(b||"").toLowerCase();return a.split(/[^a-z0-9]+/).filter(function(w){return w.length>2}).some(function(w){return b.indexOf(w)>-1})}
+function loadPoster(id,x,done){
+  var ck=x[0];if(TMDB_CACHE[ck]){done(TMDB_CACHE[ck]);return}
+  if(!TMDB_KEY)return;
+  var kind=TMDB_IDS[x[0]]?TMDB_IDS[x[0]][0]:(x[3]==="s"?"t":"m"),ep=kind==="t"?"tv":"movie",name=tmdbClean(x[0]);
+  function bySearch(){
+    return tmdbGet("/search/"+ep+"?query="+encodeURIComponent(name)+"&include_adult=false").then(function(r){
+      var hit=(r.results||[]).filter(function(i){return i.poster_path})[0];return hit?hit.poster_path:null});
+  }
+  var p=TMDB_IDS[x[0]]?tmdbGet("/"+ep+"/"+TMDB_IDS[x[0]][1]).then(function(r){
+      return(r.poster_path&&tmdbSame(x[0],r.title||r.name))?r.poster_path:bySearch()}).catch(bySearch):bySearch();
+  p.then(function(path){if(!path)return;TMDB_CACHE[ck]=path;try{localStorage.setItem("myu-tmdb2",JSON.stringify(TMDB_CACHE))}catch(e){}done(path)}).catch(function(){});
+}
 var ol=document.getElementById("l1");
 function openChannel(){var u="https://vkvideo.ru/@vibecinema_uz";var w=null;try{w=window.open(u,"_blank","noopener")}catch(e){}if(!w){location.href=u}}
 function build(){
@@ -943,24 +1004,33 @@ function build(){
     var li=document.createElement("li");
     li.className="it"+(seen[id]?" done":"");
     li.dataset.k=x[3];
-    li.innerHTML='<span class="n"></span><div class="entry"><button><span class="ck">✓</span><span class="t"></span><span class="yr"></span></button></div>';
+    li.innerHTML='<span class="n"></span><div class="entry pcard"><div class="pc"><div class="pimg"></div></div><div class="pi"><button type="button" class="tb"><span class="t"></span></button><div class="chips2"></div><div class="pa"></div></div></div>';
     li.children[0].textContent=id;
-    var entry=li.children[1],b=entry.children[0],t=b.children[1];
+    var entry=li.children[1],pc=entry.querySelector(".pc"),pimg=entry.querySelector(".pimg"),b=entry.querySelector(".tb"),t=b.firstChild,chips2=entry.querySelector(".chips2"),pa=entry.querySelector(".pa");
     t.textContent=x[1];
     var k=document.createElement("span");k.className="k";k.textContent=x[0];t.appendChild(k);
     if(x[4]){var n=document.createElement("span");n.className="nt";n.textContent=x[4];t.appendChild(n)}
-    b.children[2].innerHTML="<span class=\"year-label\">"+x[2]+"</span><small class=\"type-sticker "+(x[3]=="f"?"film-sticker":"series-sticker")+"\"><span class=\"sticker-icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">"+(x[3]=="f"?"<path d=\"M4 7h16v13H4zM4 7l4-4h4l-4 4M14 7l4-4h2v4\"/><path d=\"M7 11h.01M12 11h.01M17 11h.01\"/>":"<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 7h8M8 11h8M8 15h5\"/>")+"</svg></span>"+(x[3]=="f"?"Film":"Serial")+"</small>";
-    var fav=document.createElement("button");fav.type="button";fav.className="fav-btn"+(favorites[id]?" active":"");fav.textContent=favorites[id]?"♥":"♡";fav.setAttribute("aria-label","Sevimlilarga qoʻshish");fav.setAttribute("aria-pressed",favorites[id]?"true":"false");fav.onclick=function(e){e.stopPropagation();if(favorites[id])delete favorites[id];else favorites[id]=1;saveFavorites();fav.classList.toggle("active",!!favorites[id]);fav.textContent=favorites[id]?"♥":"♡";fav.setAttribute("aria-pressed",favorites[id]?"true":"false")};entry.appendChild(fav);
+    var pals=[["#173553","#0e2238"],["#5a1d25","#2c0d12"],["#1f4a3a","#0e2a20"],["#4a3a14","#2a2008"],["#3a2a5a","#1c1430"],["#1d4a52","#0e2a30"]],pl=pals[id%pals.length];
+    pimg.style.background="linear-gradient(160deg,"+pl[0]+","+pl[1]+")";
+    var cap=document.createElement("span");cap.className="pcap";cap.textContent=x[0];pimg.appendChild(cap);
+    (function(pimg,cap,x,id){function put(path){if(pimg.querySelector("img"))return;var im=document.createElement("img");im.alt=x[1];im.loading="lazy";im.referrerPolicy="no-referrer";im.src="https://image.tmdb.org/t/p/w342"+path;im.onerror=function(){im.remove();pimg.classList.remove("has")};pimg.insertBefore(im,cap);pimg.classList.add("has")}if(POSTER[id])put(POSTER[id]);else loadPoster(id,x,put)})(pimg,cap,x,id);
+    var c1=document.createElement("span");c1.className="chip";c1.textContent=x[2];var c2=document.createElement("span");c2.className="chip";c2.textContent=(x[3]=="f"?"Film":"Serial");chips2.appendChild(c1);chips2.appendChild(c2);
+    var HEART="<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 3.6 4.5 6.8 4.5c2 0 3.5 1 5.2 3 1.7-2 3.2-3 5.2-3 3.2 0 5.2 3.1 4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z'/></svg>";
+    var fav=document.createElement("button");fav.type="button";fav.className="fav-btn"+(favorites[id]?" active":"");fav.innerHTML=HEART;fav.setAttribute("aria-label","Sevimlilarga qoʻshish");fav.setAttribute("aria-pressed",favorites[id]?"true":"false");fav.onclick=function(e){e.stopPropagation();if(favorites[id])delete favorites[id];else favorites[id]=1;saveFavorites();fav.classList.toggle("active",!!favorites[id]);fav.setAttribute("aria-pressed",favorites[id]?"true":"false")};
     b.setAttribute("aria-pressed",seen[id]?"true":"false");
-    // Film nomini bosish tomosha havolasini ochadi; belgi (✓) esa ko‘rilgan holatini boshqaradi.
-    b.onclick=function(e){
+    // Nom yoki poster bosilsa tomosha havolasi ochiladi; poster burchagidagi (✓) ko‘rilgan holatini boshqaradi.
+    function go(e){
       if(e.target && e.target.closest && e.target.closest(".ck")) return;
       if(SER[id]){openSeries(id);}else if(LINK[id]){window.open(LINK[id],"_blank","noopener");}
       else {var msg=document.getElementById("watchNotice");if(msg){msg.textContent="Bu film uchun tomosha havolasi hozircha mavjud emas.";msg.classList.add("show");setTimeout(function(){msg.classList.remove("show")},2600)}}
-    };
-    var ck=b.querySelector(".ck");
-    if(ck){ck.setAttribute("role","button");ck.setAttribute("tabindex","0");ck.setAttribute("aria-label","Ko‘rilgan deb belgilash");ck.onclick=function(e){e.stopPropagation();if(seen[id]){delete seen[id]}else{seen[id]=1}save();li.classList.toggle("done");b.setAttribute("aria-pressed",seen[id]?"true":"false");stat()};ck.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();ck.click()}}}
-    if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.addEventListener("click",function(ev){if(SER[id]){ev.preventDefault();openSeries(id);return}track("watch",id)});a.innerHTML="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";entry.appendChild(a)}else if(NA.indexOf(id)>-1){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";entry.appendChild(m)}
+    }
+    // Faqat «Koʻrish» tugmasi havolani ochadi; nom va poster bosilganda hech narsa bo‘lmaydi.
+    if(SER[id]){pimg.classList.add("clk");pimg.onclick=function(e){if(e.target.closest&&e.target.closest(".ck"))return;openSeries(id)}}
+    var ck=document.createElement("span");ck.className="ck";ck.textContent="✓";pimg.appendChild(ck);
+    ck.setAttribute("role","button");ck.setAttribute("tabindex","0");ck.setAttribute("aria-label","Ko‘rilgan deb belgilash");ck.onclick=function(e){e.stopPropagation();if(seen[id]){delete seen[id]}else{seen[id]=1}save();li.classList.toggle("done");b.setAttribute("aria-pressed",seen[id]?"true":"false");stat()};ck.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();ck.click()}};
+    if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.addEventListener("click",function(ev){if(SER[id]){ev.preventDefault();openSeries(id);return}track("watch",id)});a.innerHTML="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";pa.appendChild(a)}else if(NA.indexOf(id)>-1){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";pa.appendChild(m)}
+    pa.appendChild(fav);
+    pc.appendChild(makeVoteBar(id));
     var vc=document.createElement("button");vc.type="button";vc.className="vc-sub";
     vc.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4"/></svg><span>Kanalga obuna boʻlish</span><span aria-hidden="true">›</span>';
     vc.onclick=function(e){e.stopPropagation();openChannel()};
@@ -972,7 +1042,6 @@ function build(){
     commentBtn.setAttribute("aria-label",x[1]+" uchun fikr bildirish");
     commentBtn.onclick=function(){openComments(id);};
     li.appendChild(commentBtn);
-    li.appendChild(makeVoteBar(id));
     li.appendChild(makeRatingSummary(id));
     li.appendChild(makeActRow(id));
     ol.appendChild(li);
