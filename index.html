@@ -830,7 +830,7 @@ var SER={};
 // Loki: 1-mavsum 6 qism (postlar 8,10,14,15,16,17) botga ulanadi. 1-mavsum to'liq, VK havola faqat 2-mavsumda ("more").
 SER[24]={seasons:[{name:"1-mavsum",eps:[8,10,14,15,16,17]},{name:"2-mavsum",eps:[],more:LINK[24]}]};
 // Vijin (VisionQuest): 1-mavsum, 4 ta qism
-SER[48]={seasons:[{name:"1-mavsum",eps:[9,11,12,13]}]};
+SER[48]={seasons:[{name:"1-mavsum",eps:[9,11,12,13,"https://t.me/Hdrmoviebot?start=1886"]}]};
 Object.keys(SER).forEach(function(k){if(!LINK[k])LINK[k]="#"});
 var SER_BOT="https://t.me/Marvel_YU_bot?start=";
 var SER_PLAY='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" style="display:block;margin:auto"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/></svg>';
@@ -873,7 +873,7 @@ function renderSeries(){
   if(!eps.length){box.innerHTML='<div class="cat-empty">Qismlar tez orada qoʻshiladi</div>';return}
   eps.forEach(function(e,k){
     var named=Array.isArray(e),post=named?e[1]:e,label=named?e[0]:(k+1)+"-qism";
-    var a=document.createElement("a");a.className="cat-ep";a.href=SER_BOT+post;a.target="_blank";a.rel="noopener";
+    var a=document.createElement("a");a.className="cat-ep";a.href=/^https?:\/\//.test(String(post))?post:SER_BOT+post;a.target="_blank";a.rel="noopener";
     var em=document.createElement("em");if(named)em.innerHTML=SER_PLAY;else em.textContent=String(k+1);
     var b=document.createElement("b");b.textContent=label;
     var i=document.createElement("i");i.textContent="›";
