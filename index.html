@@ -566,6 +566,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .ser-ov:not([hidden]){animation:serIn .28s var(--ease)}
 @keyframes serIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.ser-ov:not([hidden]){animation:none}}
+.chips{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding-bottom:2px}.chips::-webkit-scrollbar{display:none}.chips button{flex:none;white-space:nowrap}
 </style>
 <style>
 .it .entry.pcard{display:flex!important;align-items:stretch!important;gap:12px!important;padding:12px!important;border-radius:20px!important;background:rgba(10,38,28,.78)!important}
@@ -660,6 +661,9 @@ button,a{-webkit-tap-highlight-color:transparent}
       <button class="on" data-f="all">Hammasi</button>
       <button data-f="f"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v14H3zM3 7l4-4h4L7 7m7 0 4-4h3v4"/></svg> Filmlar</button>
       <button data-f="s"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 1 4 3 4-3"/></svg> Seriallar</button>
+      <button data-f="tg"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5 2.5 10.8l6.2 2.3 2.3 6.2z"/><path d="m8.7 13.1 12.8-9.6"/></svg> Telegram</button>
+      <button data-f="vk"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="m10 9 5 3-5 3z"/></svg> VK</button>
+      <button data-f="other"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg> Boshqa</button>
     </div>
     <ol class="tl" id="l1"></ol>
     <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6 3 3H6l3-3zM12 12v9"/></svg> Muhim maʼlumot</h3><p>Ushbu roʻyxatda havolasi berilmagan boshqa Marvel seriallarini hozircha oʻtkazib yuborishingiz mumkin. Ular asosiy xronologik tomosha tartibiga taʼsir qilmaydi. Voqealar ketma-ketligini tushunish uchun yuqoridagi tartibga amal qiling.</p></div>
@@ -680,7 +684,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   <button type="button" id="drawerFavorites"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.7 8 3.6 5 6.7 5c1.9 0 3.5 1 5.3 3 1.8-2 3.4-3 5.3-3 3.1 0 5 3 3.9 6.2-1.7 4.7-9.2 9.3-9.2 9.3Z"/></svg></i> Sevimlilar</button>
   <button type="button" id="drawerLater"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></i> Keyin koʻraman <span class="later-count" id="laterCount" hidden></span></button>
   <button type="button" id="drawerSettings"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></i> Sozlamalar</button>
-  <button type="button" id="drawerAbout"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9.5 5 2.5-5 2.5Z"/></svg></i> Kanal haqida</button>
+  <button type="button" id="drawerAbout"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9.5 5 2.5-5 2.5Z"/></svg></i> Sayt haqida</button>
   <button type="button" id="drawerStats" hidden><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></i> Statistika</button>
   <button type="button" id="drawerMod" hidden><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></i> Fikrlarni o‘chirish</button>
   <button type="button" id="drawerShare"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.3 10.8 7.4-3.6M8.3 13.2l7.4 3.6"/></svg></i> Saytni ulashish</button>
@@ -693,8 +697,8 @@ button,a{-webkit-tap-highlight-color:transparent}
     <div id="modLogin"><div class="st-row"><input type="password" id="modPass" placeholder="Kod" autocomplete="off"><button type="button" class="st-btn" id="modGo">Kirish</button></div><small class="st-msg" id="modMsg"></small></div>
     <div id="modBody" hidden></div></div>
   <div class="drawer-panel" id="settingsPanel"><b>Sozlamalar</b><label>Yashil dizayn <input id="greenSetting" type="checkbox" checked></label><label>Animatsiyalar <input id="motionSetting" type="checkbox" checked></label><small>Tanlovlar ushbu sahifa ochiq turganda amal qiladi.</small></div>
-  <div class="drawer-panel" id="aboutPanel"><b>Kanal haqida</b>
-    <p>Marvel YU — Marvel filmlari va seriallarini xronologik tartibda topish va tomosha qilish uchun yoʻnaltiruvchi sayt. Bu yerda filmlarni qidirish, baholash, fikr qoldirish hamda sevimli yoki keyin koʻrmoqchi boʻlgan kinolarni saqlash mumkin. Shuningdek, yangi premyera va yangiliklarni kuzatib borasiz.</p>
+  <div class="drawer-panel" id="aboutPanel"><b>Sayt haqida</b>
+    <p>Marvel YU — Marvel filmlari va seriallarini xronologik tartibda topish va tomosha qilish uchun sayt. Bu yerda filmlarni qidirish, baholash, fikr qoldirish hamda sevimli yoki keyin koʻrmoqchi boʻlgan kinolarni saqlash mumkin. Shuningdek, yangi premyera va yangiliklarni kuzatib borasiz.</p>
     <small>Your Universe — Marvel sizning koinotingiz.</small></div>
 </aside>
 <nav>
@@ -1065,11 +1069,23 @@ F.forEach(function(x){
   d.children[1].children[2].textContent=dtxt(days(x));
   fu.appendChild(d);
 });
+// Havola manbasi: tg = Telegram bot, vk = VK Video, other = boshqa sayt
+function srcOf(id){
+  var s=[],l=LINK[id]||"",d=SER[id];
+  if(d){s.push("tg");if(d.more&&/vkvideo|vk\.com/.test(d.more))s.push("vk")}
+  else if(/t\.me\//.test(l))s.push("tg");
+  else if(/vkvideo|vk\.com/.test(l))s.push("vk");
+  else if(l&&l!=="#")s.push("other");
+  return s}
 document.querySelectorAll("#chips button").forEach(function(c){c.onclick=function(){
   document.querySelectorAll("#chips button").forEach(function(x){x.classList.remove("on")});
   c.classList.add("on");
   var f=c.dataset.f;
-  document.querySelectorAll("#l1 .it").forEach(function(li){li.classList.toggle("hide",f!="all"&&li.dataset.k!=f)});
+  document.querySelectorAll("#l1 .it").forEach(function(li){
+    var hide=false;
+    if(f=="f"||f=="s")hide=li.dataset.k!=f;
+    else if(f!="all")hide=srcOf(Number(li.querySelector(".n").textContent)).indexOf(f)<0;
+    li.classList.toggle("hide",hide)});
 }});
 document.getElementById("rs").onclick=function(){if(confirm("Barcha belgilar oʻchirilsinmi?")){seen={};save();build();stat();document.querySelector("#chips .on").click()}};
 var nw=document.getElementById("news");
