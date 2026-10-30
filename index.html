@@ -343,6 +343,12 @@ body.menu-open .drawer-shade{opacity:1;visibility:visible}
 .drawer button i{width:28px;text-align:center;font-size:21px;color:#83efb1;font-style:normal}
 .drawer-panel{display:none;padding:12px;margin-top:10px;border:1px solid rgba(131,239,177,.18);border-radius:14px;background:rgba(0,0,0,.12);font-size:14px}
 .drawer-panel.show{display:block}
+.drawer .sup{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 12px;border-radius:14px;background:rgba(131,239,177,.1);border:1px solid rgba(131,239,177,.2);color:inherit;text-decoration:none}
+.drawer .sup svg{width:40px;height:40px;flex:none}
+.drawer .sup span{flex:1;min-width:0}
+.drawer .sup strong{display:block;font-size:15px}
+.drawer .sup small{display:block;margin-top:2px;font-size:12px;opacity:.75}
+.drawer .sup em{font-style:normal;font-size:22px;color:#83efb1}
 .drawer-panel label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0}
 .drawer-panel input{accent-color:#83efb1}
 .it .entry{position:relative;padding-right:146px}
@@ -684,6 +690,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   <button type="button" id="drawerLater"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></i> Keyin koʻraman <span class="later-count" id="laterCount" hidden></span></button>
   <button type="button" id="drawerSettings"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></i> Sozlamalar</button>
   <button type="button" id="drawerAbout"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9.5 5 2.5-5 2.5Z"/></svg></i> Sayt haqida</button>
+  <button type="button" id="drawerSupport"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.3C1.7 8 3.6 5 6.7 5c1.9 0 3.5 1 5.3 3 1.8-2 3.4-3 5.3-3 3.1 0 5 3 3.9 6.2-1.7 4.7-9.2 9.3-9.2 9.3Z"/></svg></i> Loyihani qo‘llab-quvvatlash</button>
   <button type="button" id="drawerStats" hidden><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></i> Statistika</button>
   <button type="button" id="drawerMod" hidden><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></i> Fikrlarni o‘chirish</button>
   <button type="button" id="drawerShare"><i><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.3 10.8 7.4-3.6M8.3 13.2l7.4 3.6"/></svg></i> Saytni ulashish</button>
@@ -696,6 +703,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     <div id="modLogin"><div class="st-row"><input type="password" id="modPass" placeholder="Kod" autocomplete="off"><button type="button" class="st-btn" id="modGo">Kirish</button></div><small class="st-msg" id="modMsg"></small></div>
     <div id="modBody" hidden></div></div>
   <div class="drawer-panel" id="settingsPanel"><b>Sozlamalar</b><label>Yashil dizayn <input id="greenSetting" type="checkbox" checked></label><label>Animatsiyalar <input id="motionSetting" type="checkbox" checked></label><small>Tanlovlar ushbu sahifa ochiq turganda amal qiladi.</small></div>
+  <div class="drawer-panel" id="supportPanel"><b>Loyihani qo‘llab-quvvatlash</b>
+    <p>Marvel YU bepul va o‘zbek tilida. Loyiha sizga yoqqan bo‘lsa, istagan summani yuborib qo‘llab-quvvatlashingiz mumkin. Rahmat!</p>
+    <a class="sup" href="https://my.click.uz/clickp2p/9F8AD34A3145152FABAC4D366BB93285439A76E2D01377F2A7CF4FDB8A5DDCC2" target="_blank" rel="noopener"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" rx="14" fill="#0A7CFF"/><rect x="14" y="14" width="24" height="24" rx="8" fill="#fff"/><rect x="20" y="20" width="12" height="12" rx="4" fill="#0A7CFF"/></svg><span><strong>Click</strong><small>Summani kiritib, to‘g‘ridan-to‘g‘ri yuborish</small></span><em>›</em></a>
+  <a class="sup" href="https://pay.xazna.uz/p2p/031e2467-0209-458d-aa3a-759f252fb3a8" target="_blank" rel="noopener"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" rx="14" fill="#6C2BD9"/><path d="M16 16h20L16 36h20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Xazna</strong><small>Summani kiritib, to‘g‘ridan-to‘g‘ri yuborish</small></span><em>›</em></a>
+  </div>
   <div class="drawer-panel" id="aboutPanel"><b>Sayt haqida</b>
     <p>Marvel YU — Marvel filmlari va seriallarini xronologik tartibda topish va tomosha qilish uchun sayt. Bu yerda filmlarni qidirish, baholash, fikr qoldirish hamda sevimli yoki keyin koʻrmoqchi boʻlgan kinolarni saqlash mumkin. Shuningdek, yangi premyera va yangiliklarni kuzatib borasiz.</p>
     <small>Your Universe — Marvel sizning koinotingiz.</small></div>
@@ -1217,7 +1229,7 @@ movieSearch.addEventListener("input",renderSearch);
 var drawer=document.getElementById("drawer"),shade=document.getElementById("drawerShade");
 function openDrawer(){document.body.classList.add("menu-open");drawer.setAttribute("aria-hidden","false")}
 function closeDrawer(){document.body.classList.remove("menu-open");drawer.setAttribute("aria-hidden","true")}
-function showDrawerPanel(id){["favoritesPanel","laterPanel","statsPanel","modPanel","settingsPanel","aboutPanel"].forEach(function(x){document.getElementById(x).classList.toggle("show",x===id)})}
+function showDrawerPanel(id){["favoritesPanel","laterPanel","statsPanel","modPanel","settingsPanel","aboutPanel","supportPanel"].forEach(function(x){document.getElementById(x).classList.toggle("show",x===id)})}
 document.getElementById("menuOpen").onclick=openDrawer;shade.onclick=closeDrawer;
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDrawer()});
 document.getElementById("drawerFavorites").onclick=function(){showDrawerPanel("favoritesPanel");renderFavorites()};
@@ -1337,7 +1349,7 @@ document.getElementById("drawerShare").onclick=function(){
   else{toast(url)}
 };
 document.getElementById("drawerSettings").onclick=function(){showDrawerPanel("settingsPanel")};
-document.getElementById("drawerAbout").onclick=function(){showDrawerPanel("aboutPanel")};
+document.getElementById("drawerAbout").onclick=function(){showDrawerPanel("aboutPanel")};document.getElementById("drawerSupport").onclick=function(){showDrawerPanel("supportPanel")};
 document.getElementById("greenSetting").onchange=function(e){document.body.classList.toggle("plain-theme",!e.target.checked)};
 document.getElementById("motionSetting").onchange=function(e){document.documentElement.style.setProperty("--user-motion",e.target.checked?"auto":"none");document.querySelectorAll("* ").forEach(function(el){el.style.scrollBehavior=e.target.checked?"":"auto"})};
 renderFavorites();
