@@ -882,7 +882,7 @@ Object.keys(SER).forEach(function(k){if(!LINK[k])LINK[k]="#"});
 var SER_BOT="https://t.me/Marvel_YU_bot?start=";
 var SER_PLAY='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" style="display:block;margin:auto"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/></svg>';
 var serOv=null,serCur=null,serS=0,serMG=false;
-document.querySelectorAll(".poster[data-ser]").forEach(function(p){p.onclick=function(){openSeries(Number(p.getAttribute("data-ser")))}});
+document.querySelectorAll(".poster[data-ser]").forEach(function(p){p.onclick=function(){var sid=Number(p.getAttribute("data-ser"));openSeries(sid,sid===51)}});
 function openSeries(id,mg){
   mg=!!(mg&&MGSER[id]);
   var x=L[id-1],d=mg?{seasons:MGSER[id]}:SER[id];if(!x||!d)return;
@@ -1105,7 +1105,7 @@ var MGSER={};
 MGSER[24]=[{name:"1-mavsum",eps:[["1-mavsum", "https://moviego.uz/series/loki-season-1"]]},{name:"2-mavsum",eps:[["2-mavsum", "https://moviego.uz/series/loki-season-2"]]}];
 MGSER[46]=[{name:"1-mavsum",eps:[["1-mavsum", "https://moviego.uz/series/daredevil-born-again-season-1"]]},{name:"2-mavsum",eps:[["2-mavsum", "https://moviego.uz/series/daredevil-born-again-season-2"]]}];
 MG[52]="https://moviego.uz/movies/x-men";MG[53]="https://moviego.uz/movies/x2-x-men-united";
-MGSER[51]=[1,2,3,4,5,6,7].map(function(n){return "https://moviego.uz/series/visionquest?e="+n});
+MGSER[51]=[{name:"1-mavsum",eps:[1,2,3,4,5,6,7].map(function(n){return "https://moviego.uz/series/visionquest?e="+n})}];
 var MG_PLAY="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";
 function build(){buildInto(ol,L.slice(0,LN).map(function(x,i){return i+1}),true)}
 function buildInto(ol,ids,numbered){
