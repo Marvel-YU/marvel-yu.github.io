@@ -615,6 +615,15 @@ button,a{-webkit-tap-highlight-color:transparent}
 .pcard .pa a.mgw{display:none}
 #l1.mg .pcard .pa a.w:not(.mgw),#l1.mg .pcard .pa .na{display:none!important}
 #l1.mg .pcard .pa a.mgw{display:flex}
+.pcard .pa a.vgw{display:none}
+#l1.vk .pcard .pa a.w:not(.vgw),#l1.vk .pcard .pa a.mgw,#l1.vk .pcard .pa .na{display:none!important}
+#l1.vk .pcard .pa a.vgw{display:flex}
+#doomList .pcard .pa a.vgw{display:none}
+#doomList.vk .pcard .pa a.w:not(.vgw),#doomList.vk .pcard .pa a.mgw,#doomList.vk .pcard .pa .na{display:none!important}
+#doomList.vk .pcard .pa a.vgw{display:flex}
+#doomList:not(.mg):not(.vk) .pcard .pa a.mgw{display:none!important}
+#doomList:not(.mg):not(.vk) .pcard .pa a.vgw.vfb{display:flex}
+#doomChips{margin-top:6px}
 </style>
 <style>
 .doom-cta{margin:8px 0 0!important;color:#e76e78!important;font-weight:700;font-size:13.5px!important;display:flex;align-items:center;gap:6px}
@@ -909,6 +918,7 @@ nav button.sopen b{background:linear-gradient(145deg,#ff4650,#c81f2b)!important;
       <button data-f="s"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 1 4 3 4-3"/></svg> Seriallar</button>
       <button data-f="tg"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5 2.5 10.8l6.2 2.3 2.3 6.2z"/><path d="m8.7 13.1 12.8-9.6"/></svg> Telegram</button>
       <button data-f="mg"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.8v12.4l10-6.2z"/><path d="M5.5 8.5c-1 2.4-1 4.9 0 7.3"/></svg> MovieGo</button>
+      <button data-f="vk"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5z"/></svg> VK Video</button>
     </div>
     <ol class="tl" id="l1"></ol>
     <div class="box"><h3><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6 3 3H6l3-3zM12 12v9"/></svg> Muhim maʼlumot</h3><p>Ushbu roʻyxatda havolasi berilmagan boshqa Marvel seriallarini hozircha oʻtkazib yuborishingiz mumkin. Ular asosiy xronologik tomosha tartibiga taʼsir qilmaydi. Voqealar ketma-ketligini tushunish uchun yuqoridagi tartibga amal qiling.</p></div>
@@ -1079,7 +1089,7 @@ var HDR_BOT="https://t.me/Hdrmoviebot?start=",MYU_BOT="https://t.me/Marvel_YU_bo
 var HDR={
  3:"642",4:"643",5:"913",6:"135",7:"618",8:"644",9:"134",10:"653",11:"356",12:"357",13:"619",14:"001",
  15:"658",16:"92",17:"087",18:"994",19:"90018",20:"674",21:"883",22:"620",23:"621",
- 27:"4829",28:"2650",29:"8199",30:"2645",33:"9156",
+ 26:"4829",28:"2650",29:"8199",30:"2645",33:"9156",
  35:"917",36:"343",37:"9589",38:"7989",39:"671",40:"782",44:"932",47:"9538",48:"847",49:"6839"
 };
 Object.keys(HDR).forEach(function(k){LINK[k]=HDR_BOT+HDR[k]});
@@ -1096,9 +1106,9 @@ SER[24]={seasons:[{name:"1-mavsum",eps:[8,10,14,15,16,17]},{name:"2-mavsum",eps:
 // WandaVision: 1-mavsum, 9 qism. Tugmalar Marvel_YU_bot orqali kanal postlarini yuboradi.
 // Botdagi start kodlari kanal post IDlari bilan mos: 22–30. 9-qism — FINAL.
 SER[25]={seasons:[{name:"1-mavsum",eps:[
-  ["1-qism",22],
-  ["2-qism",23],
-  ["3-qism",24],
+  ["1-qism",19],
+  ["2-qism",20],
+  ["3-qism",21],
   ["4-qism",25],
   ["5-qism",26],
   ["6-qism",27],
@@ -1107,15 +1117,16 @@ SER[25]={seasons:[{name:"1-mavsum",eps:[
   ["9-qism · FINAL",30]
 ]}]};
 // Vijin (VisionQuest): 1-mavsum
-SER[51]={seasons:[{name:"1-mavsum",eps:[9,11,12,13,"https://t.me/Hdrmoviebot?start=1886","https://t.me/Hdrmoviebot?start=1887"]}]};
+SER[51]={seasons:[{name:"1-mavsum",eps:[9,11,12,13,38,40,41,39]}]};
 Object.keys(SER).forEach(function(k){if(!LINK[k])LINK[k]="#"});
 var SER_BOT="https://t.me/Marvel_YU_bot?start=";
 var SER_PLAY='<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" style="display:block;margin:auto"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z"/></svg>';
-var serOv=null,serCur=null,serS=0,serMG=false;
-document.querySelectorAll(".poster[data-ser]").forEach(function(p){p.onclick=function(){var sid=Number(p.getAttribute("data-ser"));openSeries(sid,sid===51)}});
+var serOv=null,serCur=null,serS=0,serMG=false,serVK=false;
+document.querySelectorAll(".poster[data-ser]").forEach(function(p){p.onclick=function(){var sid=Number(p.getAttribute("data-ser"));openSeries(sid,false)}});
 function openSeries(id,mg){
-  mg=!!(mg&&MGSER[id]);
-  var x=L[id-1],d=mg?{seasons:MGSER[id]}:SER[id];if(!x||!d)return;
+  var vk=!!(mg==="vk"&&VKSER[id]);
+  mg=!!(mg===true&&MGSER[id]);
+  var x=L[id-1],d=vk?{seasons:VKSER[id]}:(mg?{seasons:MGSER[id]}:SER[id]);if(!x||!d)return;
   if(!serOv){
     serOv=document.createElement("div");serOv.className="ser-ov";serOv.hidden=true;
     serOv.innerHTML='<div class="top"><div class="cat-head"><button class="cat-back" type="button" aria-label="Orqaga">‹</button><div><h1></h1><p>Serial</p></div></div></div><div class="pg"><div class="cat-seasons"></div><div class="sec">Qismlar</div><div class="cat-eps"></div><div class="ser-more"></div></div>';
@@ -1123,7 +1134,7 @@ function openSeries(id,mg){
     serOv.querySelector(".cat-back").onclick=closeSeries;
     document.addEventListener("keydown",function(e){if(e.key==="Escape"&&serCur)closeSeries()});
   }
-  serCur=id;serS=0;serMG=mg;
+  serCur=id;serS=0;serMG=mg;serVK=vk;
   serOv.querySelector("h1").textContent=x[1];
   var tot=0;d.seasons.forEach(function(s){tot+=(s.eps||[]).length});
   serOv.querySelector(".cat-head p").textContent="Serial"+(tot?" · "+tot+" qism":"");
@@ -1133,9 +1144,9 @@ function openSeries(id,mg){
   renderSeries();
   try{track("watch",id)}catch(e){}
 }
-function closeSeries(){if(serOv)serOv.hidden=true;document.body.style.overflow="";serCur=null;serMG=false}
+function closeSeries(){if(serOv)serOv.hidden=true;document.body.style.overflow="";serCur=null;serMG=false;serVK=false}
 function renderSeries(){
-  var d=serMG&&MGSER[serCur]?{seasons:MGSER[serCur]}:SER[serCur],se=serOv.querySelector(".cat-seasons"),box=serOv.querySelector(".cat-eps");
+  var d=serVK&&VKSER[serCur]?{seasons:VKSER[serCur]}:(serMG&&MGSER[serCur]?{seasons:MGSER[serCur]}:SER[serCur]),se=serOv.querySelector(".cat-seasons"),box=serOv.querySelector(".cat-eps");
   se.innerHTML="";se.style.display="";
   d.seasons.forEach(function(s,j){var b=document.createElement("button");b.type="button";b.textContent=s.name;if(j===serS)b.className="on";b.onclick=function(){serS=j;renderSeries()};se.appendChild(b)});
   var mo=serOv.querySelector(".ser-more");mo.innerHTML="";
@@ -1335,7 +1346,52 @@ var MGSER={};
 MGSER[24]=[{name:"1-mavsum",eps:[["1-mavsum", "https://moviego.uz/series/loki-season-1"]]},{name:"2-mavsum",eps:[["2-mavsum", "https://moviego.uz/series/loki-season-2"]]}];
 MGSER[46]=[{name:"1-mavsum",eps:[["1-mavsum", "https://moviego.uz/series/daredevil-born-again-season-1"]]},{name:"2-mavsum",eps:[["2-mavsum", "https://moviego.uz/series/daredevil-born-again-season-2"]]}];
 MG[52]="https://moviego.uz/movies/x-men";MG[53]="https://moviego.uz/movies/x2-x-men-united";
-MGSER[51]=[{name:"1-mavsum",eps:[1,2,3,4,5,6,7].map(function(n){return "https://moviego.uz/series/visionquest?e="+n})}];
+MGSER[51]=[{name:"1-mavsum",eps:[1,2,3,4,5,6,7,8].map(function(n){return "https://moviego.uz/series/visionquest?e="+n})}];
+// VK Video havolalari: id -> havola. Hozircha yo'qlari (25, 27, 31, 32, 34, 37, 41, 42, 43, 45, 46, 51): havola berilgach shu yerga "id":"havola" qo'shiladi.
+var VK={
+  1:"https://vkvideo.ru/video-229908696_456239758?pl=-229908696_50&t=2m",
+  2:"https://vkvideo.ru/video-229908696_456240198?pl=-229908696_50&t=2s",
+  3:"https://vkvideo.ru/video-229908696_456241101?pl=-229908696_50&t=2h5m56s",
+  4:"https://vkvideo.ru/video-229908696_456241102?pl=-229908696_50&t=3m28s",
+  5:"https://vkvideo.ru/video-229908696_456239234?pl=-229908696_50",
+  6:"https://vkvideo.ru/video-229908696_456239744?pl=-229908696_50",
+  7:"https://vkvideo.ru/video-229908696_456239742?pl=-229908696_50&t=1m44s",
+  8:"https://vkvideo.ru/video-229908696_456240765?pl=-229908696_50",
+  9:"https://vkvideo.ru/video-229908696_456239745?pl=-229908696_50",
+  10:"https://vkvideo.ru/video-229908696_456239194?pl=-229908696_50",
+  11:"https://vkvideo.ru/video-229908696_456239753?pl=-229908696_50",
+  12:"https://vkvideo.ru/video-229908696_456239774?pl=-229908696_50&t=4m36s",
+  13:"https://vkvideo.ru/video-229908696_456239743?pl=-229908696_50&t=2h6m13s",
+  14:"https://vkvideo.ru/video-229908696_456240207?pl=-229908696_50&t=2s",
+  15:"https://vkvideo.ru/video-229908696_456239195?pl=-229908696_50",
+  16:"https://vkvideo.ru/video-229908696_456240209?pl=-229908696_50&t=2s",
+  17:"https://vkvideo.ru/video-229908696_456240200?pl=-229908696_50&t=7s",
+  18:"https://vkvideo.ru/video-229908696_456239169?pl=-229908696_50&t=2s",
+  19:"https://vkvideo.ru/video-229908696_456239436?pl=-229908696_50",
+  20:"https://vkvideo.ru/video-229908696_456239444?pl=-229908696_50",
+  21:"https://vkvideo.ru/video-229908696_456239502?pl=-229908696_50",
+  22:"https://vkvideo.ru/video-229908696_456239765?pl=-229908696_50",
+  23:"https://vkvideo.ru/video-229908696_456240224?pl=-229908696_50",
+  26:"https://vkvideo.ru/video-229908696_456240208?pl=-229908696_50",
+  28:"https://vkvideo.ru/video-229908696_456239170?pl=-229908696_50&t=59m53s",
+  29:"https://vkvideo.ru/video-229908696_456240210?pl=-229908696_50&t=1h47m4s",
+  30:"https://vkvideo.ru/video-229908696_456241245?pl=-229908696_50&t=3s",
+  33:"https://vkvideo.ru/video-229908696_456240193?pl=-229908696_50&t=2h6m19s",
+  35:"https://vkvideo.ru/video-229908696_456239746?pl=-229908696_50",
+  36:"https://vkvideo.ru/video-229908696_456240201?pl=-229908696_50",
+  38:"https://vkvideo.ru/video-229908696_456239441?pl=-229908696_50",
+  39:"https://vkvideo.ru/video-229908696_456240199?pl=-229908696_50&t=9s",
+  40:"https://vkvideo.ru/video-229908696_456240203?pl=-229908696_50",
+  44:"https://vkvideo.ru/video-229908696_456240204?pl=-229908696_50",
+  47:"https://vkvideo.ru/video-229908696_456240205?pl=-229908696_50",
+  48:"https://vkvideo.ru/video-229908696_456239772?pl=-229908696_50",
+  49:"https://vkvideo.ru/video-229908696_456240001?pl=-229908696_50",
+  50:"https://vkvideo.ru/video-229908696_456241247?t=2m41s"
+};
+// VK Video seriallari: id -> mavsumlar va qismlar havolalari
+VK[52]="https://vkvideo.ru/video-229908696_456240440?pl=-229908696_64";VK[53]="https://vkvideo.ru/video-229908696_456240442?pl=-229908696_64";
+var VKSER={};
+VKSER[24]=[{name:"1-mavsum",eps:["https://vkvideo.ru/video-229908696_456241229?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241230?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241231?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241232?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241233?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241234?pl=-229908696_85"]},{name:"2-mavsum",eps:["https://vkvideo.ru/video-229908696_456241235?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241236?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241237?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241238?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241242?pl=-229908696_85", "https://vkvideo.ru/video-229908696_456241243?pl=-229908696_85&t=19s"]}];
 var MG_PLAY="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";
 function build(){buildInto(ol,L.slice(0,LN).map(function(x,i){return i+1}),true)}
 function buildInto(ol,ids,numbered){
@@ -1366,13 +1422,16 @@ function buildInto(ol,ids,numbered){
       else {var msg=document.getElementById("watchNotice");if(msg){msg.textContent="Bu film uchun tomosha havolasi hozircha mavjud emas.";msg.classList.add("show");setTimeout(function(){msg.classList.remove("show")},2600)}}
     }
     // Faqat «Koʻrish» tugmasi havolani ochadi; nom va poster bosilganda hech narsa bo‘lmaydi.
-    if(SER[id]){pimg.classList.add("clk");pimg.onclick=function(e){if(e.target.closest&&e.target.closest(".ck"))return;var mgm=!!pimg.closest(".mg");if(mgm&&!MGSER[id]){var msg=document.getElementById("watchNotice");if(msg){msg.textContent="MovieGo havolasi tez orada qo‘shiladi.";msg.classList.add("show");setTimeout(function(){msg.classList.remove("show")},2600)}return}openSeries(id,mgm)}}
+    if(SER[id]){pimg.classList.add("clk");pimg.onclick=function(e){if(e.target.closest&&e.target.closest(".ck"))return;if(pimg.closest(".vk")){if(VKSER[id]){openSeries(id,"vk")}else{var vm=document.getElementById("watchNotice");if(vm){vm.textContent="VK Video havolasi tez orada qo‘shiladi.";vm.classList.add("show");setTimeout(function(){vm.classList.remove("show")},2600)}}return}var mgm=!!pimg.closest(".mg");if(mgm&&!MGSER[id]){var msg=document.getElementById("watchNotice");if(msg){msg.textContent="MovieGo havolasi tez orada qo‘shiladi.";msg.classList.add("show");setTimeout(function(){msg.classList.remove("show")},2600)}return}openSeries(id,mgm)}}
     var ck=document.createElement("span");ck.className="ck";ck.textContent="✓";pimg.appendChild(ck);
     ck.setAttribute("role","button");ck.setAttribute("tabindex","0");ck.setAttribute("aria-label","Ko‘rilgan deb belgilash");ck.onclick=function(e){e.stopPropagation();if(seen[id]){delete seen[id]}else{seen[id]=1}save();li.classList.toggle("done");b.setAttribute("aria-pressed",seen[id]?"true":"false");stat()};ck.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();ck.click()}};
     if(LINK[id]){var a=document.createElement("a");a.className="w";a.href=LINK[id];a.target="_blank";a.rel="noopener";a.addEventListener("click",function(ev){if(SER[id]){ev.preventDefault();openSeries(id);return}track("watch",id)});a.innerHTML="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" style=\"fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round\"><path d=\"m9 6 9 6-9 6z\"/></svg> Koʻrish";pa.appendChild(a)}else if(NA.indexOf(id)>-1&&!MG[id]&&!MGSER[id]){var m=document.createElement("span");m.className="na";m.textContent="Kanalda yoʻq";pa.appendChild(m)}
     var mga=document.createElement("a");mga.className="w mgw";mga.href=MG[id]||"#";mga.target="_blank";mga.rel="noopener";mga.innerHTML=MG_PLAY;
     mga.addEventListener("click",function(ev){if(MGSER[id]){ev.preventDefault();openSeries(id,true);return}if(!MG[id]){ev.preventDefault();var msg=document.getElementById("watchNotice");if(msg){msg.textContent="MovieGo havolasi tez orada qo‘shiladi.";msg.classList.add("show");setTimeout(function(){msg.classList.remove("show")},2600)}}});
     pa.appendChild(mga);
+    var vga=document.createElement("a");vga.className="w vgw"+(LINK[id]?"":" vfb");vga.href=VK[id]||"#";vga.target="_blank";vga.rel="noopener";vga.innerHTML=MG_PLAY;
+    vga.addEventListener("click",function(ev){if(VKSER[id]){ev.preventDefault();openSeries(id,"vk");return}if(!VK[id]){ev.preventDefault();var vmsg=document.getElementById("watchNotice");if(vmsg){vmsg.textContent="VK Video havolasi tez orada qo‘shiladi.";vmsg.classList.add("show");setTimeout(function(){vmsg.classList.remove("show")},2600)}}});
+    pa.appendChild(vga);
     if(!LINK[id]&&(MG[id]||MGSER[id]))mga.classList.add("show");
     pa.appendChild(fav);
     pc.appendChild(makeVoteBar(id));
@@ -1402,13 +1461,18 @@ var doomOv=null;
 function openDoom(){
   if(!doomOv){
     doomOv=document.createElement("div");doomOv.className="ser-ov doom-ov";doomOv.hidden=true;
-    doomOv.innerHTML='<div class="top"><div class="cat-head"><button class="cat-back" type="button" aria-label="Orqaga">‹</button><div><h1>Qiyomat kunidan oldin</h1><p></p></div></div></div><div class="pg"><div class="sec">Koʻrish kerak boʻlganlar</div><ol class="tl nonum mg" id="doomList"></ol></div>';
+    doomOv.innerHTML='<div class="top"><div class="cat-head"><button class="cat-back" type="button" aria-label="Orqaga">‹</button><div><h1>Qiyomat kunidan oldin</h1><p></p></div></div></div><div class="pg"><div class="chips" id="doomChips"><button type="button" class="on" data-f="tg"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 3.5 2.5 10.8l6.2 2.3 2.3 6.2z"/><path d="m8.7 13.1 12.8-9.6"/></svg> Telegram</button><button type="button" data-f="mg"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.8v12.4l10-6.2z"/><path d="M5.5 8.5c-1 2.4-1 4.9 0 7.3"/></svg> MovieGo</button><button type="button" data-f="vk"><svg class="line-icon inline-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="m10.5 9.5 4 2.5-4 2.5z"/></svg> VK Video</button></div><div class="sec">Koʻrish kerak boʻlganlar</div><ol class="tl nonum" id="doomList"></ol></div>';
     document.body.appendChild(doomOv);
     doomOv.querySelector(".cat-back").onclick=closeDoom;
+    doomOv.querySelectorAll("#doomChips button").forEach(function(c){c.onclick=function(){
+      doomOv.querySelectorAll("#doomChips button").forEach(function(x){x.classList.remove("on")});c.classList.add("on");
+      var f=c.dataset.f,l=doomOv.querySelector("#doomList");l.classList.toggle("mg",f==="mg");l.classList.toggle("vk",f==="vk")}});
     document.addEventListener("keydown",function(e){if(e.key==="Escape"&&doomOv&&!doomOv.hidden)closeDoom()});
   }
   doomOv.querySelector(".cat-head p").textContent="Avengers: Doomsday oldidan · "+DOOM_IDS.length+" ta";
-  buildInto(doomOv.querySelector("#doomList"),DOOM_IDS,false);
+  var dl=doomOv.querySelector("#doomList");dl.classList.remove("mg","vk");
+  doomOv.querySelectorAll("#doomChips button").forEach(function(x){x.classList.toggle("on",x.dataset.f==="tg")});
+  buildInto(dl,DOOM_IDS,false);
   doomOv.hidden=false;document.body.style.overflow="hidden";doomOv.scrollTop=0;
 }
 function closeDoom(){if(doomOv)doomOv.hidden=true;document.body.style.overflow="";build();stat()}
@@ -1435,13 +1499,13 @@ function srcOf(id){
   if(d){s.push("tg")}
   else if(/t\.me\//.test(l))s.push("tg");
   else if(l&&l!=="#")s.push("other");
-  s.push("mg");
+  s.push("mg");s.push("vk");
   return s}
 document.querySelectorAll("#chips button").forEach(function(c){c.onclick=function(){
   document.querySelectorAll("#chips button").forEach(function(x){x.classList.remove("on")});
   c.classList.add("on");
   var f=c.dataset.f;
-  document.getElementById("l1").classList.toggle("mg",f==="mg");
+  document.getElementById("l1").classList.toggle("mg",f==="mg");document.getElementById("l1").classList.toggle("vk",f==="vk");
   document.querySelectorAll("#l1 .it").forEach(function(li){
     var hide=false;
     if(f=="f"||f=="s")hide=li.dataset.k!=f;
@@ -1702,10 +1766,10 @@ function helpLoad(open){
     helpUnread(false);msg.textContent="";
     hBubbles(hEl("helpThread"),d.messages,false);
     if(d.name&&!hGetName())hSetName(d.name);
-  }).catch(function(){if(open)msg.textContent="Yuklab bo‘lmadi. Internetni tekshiring."})}
+  }).catch(function(e){if(open){var m=String(e&&e.message||"");msg.textContent=/HTTP \d+/.test(m)?"Yuklab bo‘lmadi ("+m.replace("HTTP ","xato ")+").":"Yuklab bo‘lmadi. Internetni tekshiring."}})}
 function helpOpen(profile){
   try{closeDrawer()}catch(e){}
-  hEl("helpOverlay").hidden=false;hEl("helpFab").hidden=true;hEl("helpTip").hidden=true;
+  hEl("helpOverlay").hidden=false;hEl("helpMsg").textContent="";hEl("helpFab").hidden=true;hEl("helpTip").hidden=true;
   document.body.style.overflow="hidden";hHello();
   hEl("helpProf").hidden=!profile;helpLoad(true)}
 function helpClose(){hEl("helpOverlay").hidden=true;hEl("helpFab").hidden=false;document.body.style.overflow=""}
@@ -1719,7 +1783,7 @@ function helpSend(){
     if(d&&d.ok){box.value="";box.style.height="";lsSet("myu-help-used",true);helpLoad(true)}
     else if(d&&d.status==="rate")msg.textContent="Juda tez-tez yubordingiz. Birozdan keyin urinib ko‘ring.";
     else msg.textContent="Yuborilmadi. Qayta urinib ko‘ring."
-  }).catch(function(){btn.disabled=false;msg.textContent="Yuborilmadi. Internetni tekshiring."})}
+  }).catch(function(e){btn.disabled=false;var m=String(e&&e.message||"");msg.textContent=/HTTP \d+/.test(m)?"Yuborilmadi ("+m.replace("HTTP ","xato ")+"). Keyinroq urinib ko‘ring.":"Yuborilmadi. Internetni tekshiring."})}
 hEl("helpFab").onclick=function(){helpOpen(false)};
 hEl("helpTip").onclick=function(){helpOpen(false)};
 hEl("helpClose").onclick=helpClose;
